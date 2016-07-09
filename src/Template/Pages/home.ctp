@@ -64,6 +64,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
             <div class="columns large-12 checks">
                 <h4>Environment</h4>
+                <li><?= $this->Html->link(__('List Security Accounts'), ['controller'=> 'SecurityAccounts','action' => 'index']) ?></li>
                 <?php if (version_compare(PHP_VERSION, '5.5.9', '>=')): ?>
                     <p class="success">Your version of PHP is 5.5.9 or higher (detected <?= phpversion() ?>).</p>
                 <?php else: ?>
