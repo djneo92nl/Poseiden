@@ -31,6 +31,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
+    <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
     <?= $this->fetch('script') ?>
 </head>
 <body>
