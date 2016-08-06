@@ -12,7 +12,6 @@
                 <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('userId') ?></th>
                 <th><?= $this->Paginator->sort('username') ?></th>
-                <th><?= $this->Paginator->sort('password') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
                 <th><?= $this->Paginator->sort('modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -24,7 +23,6 @@
                 <td><?= $this->Number->format($securityAccount->id) ?></td>
                 <td><?= $this->Number->format($securityAccount->userId) ?></td>
                 <td><?= h($securityAccount->username) ?></td>
-                <td><?= h($securityAccount->password) ?></td>
                 <td><?= h($securityAccount->created) ?></td>
                 <td><?= h($securityAccount->modified) ?></td>
                 <td class="actions">
