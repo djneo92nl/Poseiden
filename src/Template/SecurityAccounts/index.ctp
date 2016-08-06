@@ -1,11 +1,8 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Security Account'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="securityAccounts index large-9 medium-8 columns content">
-    <h3><?= __('Security Accounts') ?></h3>
+<div class="panel-heading">
+	<h3 class="panel-title"><?= __('Security Accounts') ?></h3>
+</div>
+
+<div class="page-content">
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -42,4 +39,10 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+	<nav class="large-3 medium-4 columns" id="actions-sidebar">
+		<ul class="side-nav">
+			<li class="heading"><?= __('Actions') ?></li>
+			<li><?= $this->Html->link(__('New Security Account'), ['action' => 'add']) ?></li>
+		</ul>
+	</nav>
 </div>
