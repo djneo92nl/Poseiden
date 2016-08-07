@@ -1,3 +1,7 @@
+
+<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
 <div class="row">
 	<div class="col-lg-3">
 		<li class="heading"><?= __('Actions') ?></li>
@@ -66,13 +70,3 @@
 	</div>
 </div>
 
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li></li>
-        <li><?= $this->Html->link(__('List Text Documents'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-
-<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
