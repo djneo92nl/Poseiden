@@ -4,12 +4,19 @@
     "homepage": "http://cakephp.org",
     "type": "project",
     "license": "MIT",
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "git@github.com:djneo92nl/phpMQTT.git"
+      }
+    ],
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=5.6.9",
         "cakephp/cakephp": "~3.2",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "@stable",
-        "cakephp/plugin-installer": "*"
+        "cakephp/plugin-installer": "*",
+        "djneo/phpmqtt" : "dev-master"
     },
     "require-dev": {
         "psy/psysh": "@stable",

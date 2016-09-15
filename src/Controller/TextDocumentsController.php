@@ -11,6 +11,14 @@ use App\Controller\AppController;
 class TextDocumentsController extends AppController
 {
 
+
+	public function initialize()
+	{
+		parent::initialize();
+		$this->loadComponent('RequestHandler');
+		$this->Auth->allow(['getSensorData']);
+	}
+
     /**
      * Index method
      *
@@ -86,6 +94,12 @@ class TextDocumentsController extends AppController
         $this->set(compact('textDocument'));
         $this->set('_serialize', ['textDocument']);
     }
+
+	public function getSensorData()
+	{
+		$export = ['temp' => \Cake\Cache\Cache::read('mqttSensortemperature'),'humidity' => \Cake\Cache\Cache::read('mqttSensorhumidity')  ];
+		$this->set('sensor', $export);
+	}
 
     /**
      * Delete method
