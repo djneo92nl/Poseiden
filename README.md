@@ -1,26 +1,7 @@
-# CakePHP Application Skeleton
+# Poseiden
 
-[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
-[![License](https://img.shields.io/packagist/l/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
+## Simple event and rule based home automation
 
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
+Uses MMQT, Philips Hue, Custom socket Protocol for connecting to devices. Open API.
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
-
-## Installation
-
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
-
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist cakephp/app [app_name]
-```
-
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
+Has support for multiple users, Mutiple rooms, Scenes. Devices can be shared between users. idea is to run a local istallation at a users home, this so devices have the lowest lag to connect, and to have a central server that is used for out of home controll, designed to work like plex, will add large api support in the future and multiple types of devices (connect to nest, MyDlink, IP cams, Eneco Toon, 443MHz (with esp8266/arduino/raspberry based client)
