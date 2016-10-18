@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreateSensors extends AbstractMigration
+class CreateMenu extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,26 +12,32 @@ class CreateSensors extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('sensors');
+        $table = $this->table('menu');
         $table->addColumn('name', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('description', 'text', [
-            'default' => null,
-            'null' => false,
-        ]);
-        $table->addColumn('type', 'string', [
+        $table->addColumn('controller', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
         ]);
-	    $table->addColumn('owner', 'integer', [
-		    'default' => null,
-		    'limit' => 11,
-		    'null' => false,
-	    ]);
+        $table->addColumn('action', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+        ]);
+	    $table->addColumn('icon', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+        ]);
+        $table->addColumn('parentId', 'integer', [
+	        'default' => null,
+	        'limit' => 11,
+	        'null' => false,
+        ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,
             'null' => false,

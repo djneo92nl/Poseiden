@@ -52,8 +52,6 @@ class mqttShell extends Shell {
 
 	static public function decodeMQTTMessage($topic,$msg){
 		$topicExploded = explode('/',$topic);
-		var_dump($topicExploded[1]);
-		var_dump($msg);
 
 		\Cake\Cache\Cache::write('mqttSensor'.$topicExploded[1], $msg);
 	}

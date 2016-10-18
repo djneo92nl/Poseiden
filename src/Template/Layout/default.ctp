@@ -38,7 +38,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 		<?= $this->fetch('script') ?>
 	</head>
 	<body class="nifty-ready pace-done">
+
+	<script>$.niftyNav('expand');
+
+
+	</script>
 		<div id="container">
+			<header id="navbar">
+				<div id="navbar-container" class="boxed">
+					<?= $this->element('navbar',['cache' => true]) ?>
+				</div>
+			</header>
+
 			<div id="boxed">
 				<?= $this->Flash->render() ?>
 				<div id="content-container">
@@ -46,11 +57,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 						<?= $this->fetch('content') ?>
 					</div>
 				</div>
+				<? $cell =$this->cell('menu',[]); ?>
+
+				<?=$cell?>
+
 			</div>
-			<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
-			<?= $this->Html->script("bootstrap.min.js"); ?>
-			<?= $this->Html->script("fastclick.min.js"); ?>
-			<?= $this->Html->script("nifty.min.js"); ?>
 		</div>
+
+
+		<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
+		<?= $this->Html->script("bootstrap.min.js"); ?>
+		<?= $this->Html->script("fastclick.min.js"); ?>
+		<?= $this->Html->script("nifty.min.js"); ?>
 	</body>
 </html>
