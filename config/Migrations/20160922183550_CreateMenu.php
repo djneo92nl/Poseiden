@@ -28,15 +28,15 @@ class CreateMenu extends AbstractMigration
             'limit' => 255,
             'null' => false,
         ]);
-	    $table->addColumn('icon', 'string', [
+        $table->addColumn('icon', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
         ]);
         $table->addColumn('parentId', 'integer', [
-	        'default' => null,
-	        'limit' => 11,
-	        'null' => false,
+            'default' => null,
+            'limit' => 11,
+            'null' => false,
         ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,

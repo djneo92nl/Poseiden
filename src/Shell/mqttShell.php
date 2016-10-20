@@ -10,51 +10,51 @@ use djneo\phpMQTT;
  */
 class mqttShell extends Shell {
 
-	/**
-	 * @var
-	 */
-	public $mqttClass;
+    /**
+     * @var
+     */
+    public $mqttClass;
 
-	/**
-	 * @return mixed
-	 */
-	public function getMqttClass () {
-		return $this->mqttClass;
-	}
+    /**
+     * @return mixed
+     */
+    public function getMqttClass () {
+        return $this->mqttClass;
+    }
 
-	/**
-	 * @param mixed $mqttClass
-	 */
-	public function setMqttClass ($mqttClass) {
-		$this->mqttClass = $mqttClass;
-	}
-
-
-	/**
-	 *
-	 */
-	public function main () {
-		$this->setMqttClass(new phpMQTT("poseiden.remko.ninja", 1883, "Poseiden Server")); //Change client name to something unique
-
-		if ($this->getMqttClass()->connect()){
-			$this->out('Connected to phpMQTT server');
-		}
+    /**
+     * @param mixed $mqttClass
+     */
+    public function setMqttClass ($mqttClass) {
+        $this->mqttClass = $mqttClass;
+    }
 
 
-		$topics['m_bed/#'] = array("qos"=>0, "function"=>__CLASS__ . "::decodeMQTTMessage");
-		$this->getMqttClass()->subscribe($topics,0);
-		while($this->getMqttClass()->proc()){
+    /**
+     *
+     */
+    public function main () {
+        $this->setMqttClass(new phpMQTT("poseiden.remko.ninja", 1883, "Poseiden Server")); //Change client name to something unique
 
-		}
-		$this->getMqttClass()->close();
+        if ($this->getMqttClass()->connect()){
+            $this->out('Connected to phpMQTT server');
+        }
 
-	}
 
-	static public function decodeMQTTMessage($topic,$msg){
-		$topicExploded = explode('/',$topic);
+        $topics['m_bed/#'] = array("qos"=>0, "function"=>__CLASS__ . "::decodeMQTTMessage");
+        $this->getMqttClass()->subscribe($topics,0);
+        while($this->getMqttClass()->proc()){
 
-		\Cake\Cache\Cache::write('mqttSensor'.$topicExploded[1], $msg);
-	}
+        }
+        $this->getMqttClass()->close();
+
+    }
+
+    static public function decodeMQTTMessage($topic,$msg){
+        $topicExploded = explode('/',$topic);
+
+        \Cake\Cache\Cache::write('mqttSensor'.$topicExploded[1], $msg);
+    }
 
 
 

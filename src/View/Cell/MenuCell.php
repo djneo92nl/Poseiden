@@ -24,8 +24,8 @@ class MenuCell extends Cell
      */
     public function display()
     {
-	    $this->loadModel('Menu');
-	    $menu = $this->Menu->find();
-	    $this->set('menu', $menu);
+        $this->loadModel('Menu');
+        $menu = $this->Menu->find();
+        $this->set('menu', $menu);
     }
 }
