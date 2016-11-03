@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * User Entity
+ * Profile Entity
  *
  * @property int $id
  * @property string $firstname
@@ -15,7 +15,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  */
-class User extends Entity
+class Profile extends Entity
 {
 
     /**
