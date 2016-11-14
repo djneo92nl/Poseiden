@@ -46,7 +46,7 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             'authenticate' => [
                 'Form' => [
-                    'userModel' => 'security_accounts',
+                    'userModel' => 'users',
                     'fields' => [
                         'username' => 'username',
                         'password' => 'password'
@@ -54,14 +54,14 @@ class AppController extends Controller
                 ]
             ],
             'loginAction' => [
-                'controller' => 'SecurityAccounts',
+                'controller' => 'Users',
                 'action' => 'login'
             ]
         ]);
 
         // Allow the display action so our pages controller
         // continues to work.
-        $this->Auth->allow(['display']);
+       // $this->Auth->allow(['display']);
 
     }
 
@@ -78,5 +78,8 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+
+	    $this->set('authUser', $this->Auth->user());
+
     }
 }

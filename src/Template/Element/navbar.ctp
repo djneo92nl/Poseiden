@@ -1,3 +1,11 @@
+<div class="navbar-header">
+	<a href="index.html" class="navbar-brand">
+		<img src="/img/PoseidenLogo.png" alt="Nifty Logo" class="brand-icon">
+		<div class="brand-title">
+			<span class="brand-text">Poseiden</span>
+		</div>
+	</a>
+</div>
 <div class="navbar-content clearfix">
 	<ul class="nav navbar-top-links pull-left">
 
@@ -64,7 +72,7 @@
 							<li>
 								<a href="#" class="media">
 									<div class="media-left">
-										<img src="img/av4.png" alt="Profile Picture" class="img-circle img-sm">
+										<!--<img src="img/av4.png" alt="Profile Picture" class="img-circle img-sm">-->
 									</div>
 									<div class="media-body">
 										<div class="text-nowrap">Lucy sent you a message</div>
@@ -77,7 +85,7 @@
 							<li>
 								<a href="#" class="media">
 									<div class="media-left">
-										<img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm">
+										<!--<img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm">-->
 									</div>
 									<div class="media-body">
 										<div class="text-nowrap">Jackson sent you a message</div>
@@ -152,7 +160,7 @@
 							<li>
 								<a href="#" class="media">
 									<div class="media-left">
-										<img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm">
+										<!--<img src="img/av3.png" alt="Profile Picture" class="img-circle img-sm">-->
 									</div>
 									<div class="media-body">
 										<div class="text-nowrap">Jackson sent you a message</div>
@@ -265,61 +273,7 @@
 	</ul>
 	<ul class="nav navbar-top-links pull-right">
 
-		<!--Language selector-->
-		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-		<li class="dropdown">
-			<a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown">
-                                <span class="lang-selected">
-                                    <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
-                                </span>
-			</a>
 
-			<!--Language selector menu-->
-			<ul class="head-list dropdown-menu">
-				<li>
-					<!--English-->
-					<a href="#" class="active">
-						<img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
-						<span class="lang-id">EN</span>
-						<span class="lang-name">English</span>
-					</a>
-				</li>
-				<li>
-					<!--France-->
-					<a href="#">
-						<img class="lang-flag" src="img/flags/france.png" alt="France">
-						<span class="lang-id">FR</span>
-						<span class="lang-name">Français</span>
-					</a>
-				</li>
-				<li>
-					<!--Germany-->
-					<a href="#">
-						<img class="lang-flag" src="img/flags/germany.png" alt="Germany">
-						<span class="lang-id">DE</span>
-						<span class="lang-name">Deutsch</span>
-					</a>
-				</li>
-				<li>
-					<!--Italy-->
-					<a href="#">
-						<img class="lang-flag" src="img/flags/italy.png" alt="Italy">
-						<span class="lang-id">IT</span>
-						<span class="lang-name">Italiano</span>
-					</a>
-				</li>
-				<li>
-					<!--Spain-->
-					<a href="#">
-						<img class="lang-flag" src="img/flags/spain.png" alt="Spain">
-						<span class="lang-id">ES</span>
-						<span class="lang-name">Español</span>
-					</a>
-				</li>
-			</ul>
-		</li>
-		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-		<!--End language selector-->
 
 
 
@@ -327,10 +281,10 @@
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 		<li id="dropdown-user" class="dropdown">
 			<a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
-                                <span class="pull-right">
-                                    <img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
-                                </span>
-				<div class="username hidden-xs">John Doe</div>
+                <span class="pull-right">
+                    <!--<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">-->
+                </span>
+				<div class="username hidden-xs"><?=$this->request->session()->read('Auth.User.username');?></div>
 			</a>
 
 

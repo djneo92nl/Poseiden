@@ -5,7 +5,7 @@ use Cake\ORM\Entity;
 use Cake\Auth\DefaultPasswordHasher;
 
 /**
- * SecurityAccount Entity
+ * User Entity
  *
  * @property int $id
  * @property int $userId
@@ -14,7 +14,7 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  */
-class SecurityAccount extends Entity
+class User extends Entity
 {
 
     /**

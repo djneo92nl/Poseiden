@@ -32,7 +32,12 @@ class ProfilesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('profiles');
+		$this->belongsTo('Users',[
+			'foreignKey' => 'user_id',
+			'joinType' => 'INNER'
+		]);
+
+	    $this->table('profiles');
         $this->displayField('id');
         $this->primaryKey('id');
 

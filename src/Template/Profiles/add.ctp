@@ -14,6 +14,7 @@
             echo $this->Form->input('email');
             echo $this->Form->input('birthday');
             echo $this->Form->input('description');
+            echo $this->Form->input('user_id',array('value'=>$authUser['id']));
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

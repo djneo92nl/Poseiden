@@ -5,37 +5,40 @@
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Users') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th><?= $this->Paginator->sort('id') ?></th>
-                <th><?= $this->Paginator->sort('firstname') ?></th>
-                <th><?= $this->Paginator->sort('lastname') ?></th>
-                <th><?= $this->Paginator->sort('birthday') ?></th>
-                <th><?= $this->Paginator->sort('created') ?></th>
-                <th><?= $this->Paginator->sort('modified') ?></th>
-                <th class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= $this->Number->format($user->id) ?></td>
-                <td><?= h($user->firstname) ?></td>
-                <td><?= h($user->lastname) ?></td>
-                <td><?= h($user->birthday) ?></td>
-                <td><?= h($user->created) ?></td>
-                <td><?= h($user->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+
+	<div id="page-title">
+		<h1 class="page-header text-overflow"><?= __('Profiles') ?></h1>
+	</div>
+
+	<div id="page-content">
+		<div class="row">
+			<div class="eq-height">
+				<?php foreach ($profiles as $profile): ?>
+					<div class="col-sm-4 col-lg-3">
+						<!--Panel with Footer-->
+						<!--===================================================-->
+						<div class="panel">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<?= h($profile->firstname) ?> <?= h($profile->lastname) ?>
+								</h3>
+							</div>
+							<div class="panel-body">
+							</div>
+							<div class="panel-footer">
+								<?= $this->Html->link(__('View'), ['action' => 'view', $profile->id]) ?>
+								<?= $this->Html->link(__('Edit'), ['action' => 'edit', $profile->id]) ?>
+								<?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $profile->id], ['confirm' => __('Are you sure you want to delete # {0}?', $profile->id)]) ?>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--End Panel with Footer-->
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>

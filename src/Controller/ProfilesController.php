@@ -18,9 +18,9 @@ class ProfilesController extends AppController
      */
     public function index()
     {
-        $Profiles = $this->paginate($this->Profiles);
+        $profiles = $this->paginate($this->Profiles);
 
-        $this->set(compact('Profiles'));
+        $this->set(compact('profiles'));
         $this->set('_serialize', ['Profiles']);
     }
 
@@ -33,11 +33,11 @@ class ProfilesController extends AppController
      */
     public function view($id = null)
     {
-        $Profile = $this->Profiles->get($id, [
+        $profile = $this->Profiles->get($id, [
             'contain' => []
         ]);
 
-        $this->set('Profile', $Profile);
+        $this->set('profile', $profile);
         $this->set('_serialize', ['Profile']);
     }
 

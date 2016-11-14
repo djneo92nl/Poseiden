@@ -15,17 +15,17 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($securityAccounts as $securityAccount): ?>
+            <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= $this->Number->format($securityAccount->id) ?></td>
-                <td><?= $this->Number->format($securityAccount->userId) ?></td>
-                <td><?= h($securityAccount->username) ?></td>
-                <td><?= h($securityAccount->created) ?></td>
-                <td><?= h($securityAccount->modified) ?></td>
+                <td><?= $this->Number->format($user->id) ?></td>
+                <td><?= $this->Number->format($user->userId) ?></td>
+                <td><?= h($user->username) ?></td>
+                <td><?= h($user->created) ?></td>
+                <td><?= h($user->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $securityAccount->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $securityAccount->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $securityAccount->id], ['confirm' => __('Are you sure you want to delete # {0}?', $securityAccount->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

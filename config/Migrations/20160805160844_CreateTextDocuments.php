@@ -22,7 +22,7 @@ class CreateTextDocuments extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
-        $table->addColumn('creator', 'string', [
+        $table->addColumn('user_id', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,

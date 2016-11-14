@@ -27,7 +27,7 @@ class CreateSensors extends AbstractMigration
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('owner', 'integer', [
+        $table->addColumn('user_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,

@@ -38,12 +38,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 		<?= $this->fetch('script') ?>
 	</head>
 	<body class="nifty-ready pace-done">
-
-	<script>$.niftyNav('expand');
-
-
-	</script>
-		<div id="container">
+		<div id="container" class="effect mainnav-lg" >
 			<header id="navbar">
 				<div id="navbar-container" class="boxed">
 					<?= $this->element('navbar',['cache' => true]) ?>

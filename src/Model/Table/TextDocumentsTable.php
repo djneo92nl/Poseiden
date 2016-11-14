@@ -30,7 +30,9 @@ class TextDocumentsTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('text_documents');
+	    $this->belongsTo('Users');
+
+	    $this->table('text_documents');
         $this->displayField('name');
         $this->primaryKey('id');
     }

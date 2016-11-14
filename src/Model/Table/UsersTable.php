@@ -7,19 +7,19 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * SecurityAccounts Model
+ * Users Model
  *
- * @method \App\Model\Entity\SecurityAccount get($primaryKey, $options = [])
- * @method \App\Model\Entity\SecurityAccount newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\SecurityAccount[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\SecurityAccount|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\SecurityAccount patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\SecurityAccount[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\SecurityAccount findOrCreate($search, callable $callback = null)
+ * @method \App\Model\Entity\User get($primaryKey, $options = [])
+ * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\User[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\User|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\User patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\User[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null)
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class SecurityAccountsTable extends Table
+class UsersTable extends Table
 {
 
     /**
@@ -32,7 +32,11 @@ class SecurityAccountsTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('security_accounts');
+	    $this->hasOne('Profiles', [
+		    'foreignKey' => 'user_id'
+	    ]);
+
+	    $this->table('users');
         $this->displayField('id');
         $this->primaryKey('id');
 

@@ -5,7 +5,7 @@
     </ul>
 </nav>
 <div class="securityAccounts form large-9 medium-8 columns content">
-    <?= $this->Form->create($securityAccount) ?>
+    <?= $this->Form->create($user) ?>
     <fieldset>
         <legend><?= __('Add Security Account') ?></legend>
         <?php
