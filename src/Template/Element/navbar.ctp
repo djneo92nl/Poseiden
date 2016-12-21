@@ -23,6 +23,7 @@
 
 		<!--Notification dropdown-->
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<?php /**
 		<li class="dropdown">
 			<a href="#" data-toggle="dropdown" class="dropdown-toggle">
 				<i class="fa fa-bell fa-lg"></i>
@@ -269,7 +270,8 @@
 		</li>
 		<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 		<!--End mega dropdown-->
-
+		**/
+		?>
 	</ul>
 	<ul class="nav navbar-top-links pull-right">
 
@@ -282,8 +284,13 @@
 		<li id="dropdown-user" class="dropdown">
 			<a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
                 <span class="pull-right">
-                    <!--<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">-->
+	                <?php
+	                //Generate Users Gravatar
+	                $graviatarHash = md5( strtolower( trim( $profile['email'] ) ) );
+	                ?>
+                    <img class="img-circle img-user media-object" src="https://www.gravatar.com/avatar/<?=$graviatarHash;?>?s=200" alt="Profile Picture">
                 </span>
+
 				<div class="username hidden-xs"><?=$this->request->session()->read('Auth.User.username');?></div>
 			</a>
 

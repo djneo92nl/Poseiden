@@ -41,7 +41,10 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler');
+	    $this->loadModel('Profiles');
+
+
+	    $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'authenticate' => [
@@ -79,7 +82,13 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
 
-	    $this->set('authUser', $this->Auth->user());
+	    $user = $this->Auth->User();
+
+	    if (isset($user)){
+		    $this->set('authUser', $user);
+		    $profile = $this->Profiles->get($user['id']);
+		    $this->set(compact('profile'));
+	    }
 
     }
 }
