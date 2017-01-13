@@ -12,18 +12,18 @@ class CreateDeviceInterfaces extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('device_interfaces');
+        $table = $this->table('device_controller');
         $table->addColumn('name', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('interface_device_type', 'string', [
+        $table->addColumn('device_controller_type', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('interface_data', 'text', [
+        $table->addColumn('device_controller_data', 'text', [
             'default' => null,
             'null' => false,
         ]);
