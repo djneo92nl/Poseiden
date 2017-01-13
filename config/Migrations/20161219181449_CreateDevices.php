@@ -13,7 +13,7 @@ class CreateDevices extends AbstractMigration
     public function change()
     {
         $table = $this->table('devices');
-        $table->addColumn('device_interface_id', 'integer', [
+        $table->addColumn('device_controller_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
