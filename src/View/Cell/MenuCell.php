@@ -6,26 +6,25 @@ use Cake\View\Cell;
 /**
  * Menu cell
  */
-class MenuCell extends Cell
-{
+class MenuCell extends Cell {
 
-    /**
-     * List of valid options that can be passed into this
-     * cell's constructor.
-     *
-     * @var array
-     */
-    protected $_validCellOptions = [];
+	/**
+	 * List of valid options that can be passed into this
+	 * cell's constructor.
+	 *
+	 * @var array
+	 */
+	protected $_validCellOptions = [];
 
-    /**
-     * Default display method.
-     *
-     * @return void
-     */
-    public function display()
-    {
-        $this->loadModel('Menu');
-        $menu = $this->Menu->find();
-        $this->set('menu', $menu);
-    }
+	/**
+	 * Default display method.
+	 *
+	 * @return void
+	 */
+	public function display()
+	{
+		$this->loadModel('Menu');
+		$menu = $this->Menu->find();
+		$this->set('menu', $menu);
+	}
 }

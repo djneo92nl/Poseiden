@@ -23,23 +23,22 @@ use BootstrapUI\View\UIViewTrait;
  *
  * @link http://book.cakephp.org/3.0/en/views.html#the-app-view
  */
-class AppView extends View
-{
+class AppView extends View {
 
-    use UIViewTrait;
+	use UIViewTrait;
 
-    /**
-     * Initialization hook method.
-     *
-     * Use this method to add common initialization code like loading helpers.
-     *
-     * e.g. `$this->loadHelper('Html');`
-     *
-     * @return void
-     */
-    public function initialize()
-    {
-        //render the initializeUI method from the UIViewTrait
-        $this->initializeUI(['layout' => false]);
-    }
+	/**
+	 * Initialization hook method.
+	 *
+	 * Use this method to add common initialization code like loading helpers.
+	 *
+	 * e.g. `$this->loadHelper('Html');`
+	 *
+	 * @return void
+	 */
+	public function initialize()
+	{
+		//render the initializeUI method from the UIViewTrait
+		$this->initializeUI(['layout' => false]);
+	}
 }

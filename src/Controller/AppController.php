@@ -25,8 +25,7 @@ use Cake\Event\Event;
  *
  * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller
-{
+class AppController extends Controller {
 
     /**
      * Initialization hook method.
@@ -37,8 +36,7 @@ class AppController extends Controller
      *
      * @return void
      */
-    public function initialize()
-    {
+    public function initialize() {
         parent::initialize();
 
 	    $this->loadModel('Profiles');
@@ -74,8 +72,7 @@ class AppController extends Controller
      * @param \Cake\Event\Event $event The beforeRender event.
      * @return void
      */
-    public function beforeRender(Event $event)
-    {
+    public function beforeRender(Event $event) {
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
@@ -84,7 +81,7 @@ class AppController extends Controller
 
 	    $user = $this->Auth->User();
 
-	    if (isset($user)){
+	    if (isset($user)) {
 		    $this->set('authUser', $user);
 		    $profile = $this->Profiles->get($user['id']);
 		    $this->set(compact('profile'));

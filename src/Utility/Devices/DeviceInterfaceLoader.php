@@ -7,20 +7,20 @@ namespace App\Utility\Device;
  * Loads Device interface
  */
 class DeviceInterfaceLoader {
-	public function __construct () {
+	public function __construct() {
 		// TODO: Implement __construct() method.
 	}
 
-	public function __destruct () {
+	public function __destruct() {
 		// TODO: Implement __destruct() method.
 	}
 
 
-	public function runInterfaceInstall () {
+	public function runInterfaceInstall() {
 
 	}
 
-	public function runInterfaceSetup () {
+	public function runInterfaceSetup() {
 
 	}
 }

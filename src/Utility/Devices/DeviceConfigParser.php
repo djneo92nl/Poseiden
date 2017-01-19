@@ -7,11 +7,11 @@ namespace App\Utility\Device;
  * Controls Device
  */
 class DeviceConfigParser {
-	public function __construct () {
+	public function __construct() {
 		// TODO: Implement __construct() method.
 	}
 
-	public function __destruct () {
+	public function __destruct() {
 		// TODO: Implement __destruct() method.
 	}
 
