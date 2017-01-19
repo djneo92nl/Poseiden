@@ -1,0 +1,64 @@
+@import "../../variables";
+
+
+
+
+// BODY
+//============================================
+$body-bg                    : #F2F6F8;
+$body-color					: #5f5f5f;
+
+
+
+
+// GENERAL COMPONENTS
+//============================================
+$state-active-bg            : #5aaedc;
+$state-active-color         : #fff;
+
+
+
+
+// NAVIGATION
+//============================================
+$mainnav-bg                 : #2d5b75;
+$mainnav-color              : #9db2bf;
+$mainnav-hover-color        : #fff;
+$mainnav-active-bg          : transparent;
+$mainnav-active-color       : #fff;
+$mainnav-active-state       : darken($state-active-bg, 15%);
+
+
+
+
+// NAVBAR & LOGO
+//============================================
+$navbar-bg                  : #fff;
+$navbar-color               : $body-color;
+$brand-bg                   : transparent;
+$brand-bg-overlay           : $mainnav-bg;
+$brand-color                : $state-active-color;
+$brand-color-overlay        : $navbar-color;
+
+
+
+
+// ASIDE
+//============================================
+$aside-dark-bg              : lighten($mainnav-bg,5%);
+$aside-dark-color           : #fff;
+$aside-bright-bg            : #fff;
+$aside-bright-color         : #515151;
+
+
+
+
+// FOOTER
+//============================================
+$footer-bg                  : desaturate(darken($body-bg, 13%), 21%);
+$footer-color               : $body-color;
+
+
+
+
+@import "../themes";

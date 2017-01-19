@@ -1,0 +1,19 @@
+{
+  "name": "Poseiden",
+  "version": "0.0.0",
+  "authors": [
+    "Remco Janse <r.janse@youwe.nl>"
+  ],
+  "description": "Styling for Poseiden Base",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass": "3.3.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
