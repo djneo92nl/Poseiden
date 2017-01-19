@@ -17,8 +17,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\TextDocument[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\TextDocument findOrCreate($search, callable $callback = null)
  */
-class TextDocumentsTable extends Table
-{
+class TextDocumentsTable extends Table {
 
     /**
      * Initialize method
@@ -26,8 +25,7 @@ class TextDocumentsTable extends Table
      * @param array $config The configuration for the Table.
      * @return void
      */
-    public function initialize(array $config)
-    {
+    public function initialize(array $config) {
         parent::initialize($config);
 
 	    $this->belongsTo('Users');
@@ -43,8 +41,7 @@ class TextDocumentsTable extends Table
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
+    public function validationDefault(Validator $validator) {
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');

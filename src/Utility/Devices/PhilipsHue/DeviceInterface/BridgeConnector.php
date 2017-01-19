@@ -16,7 +16,7 @@ class BridgeConnector
 
 	private $connecter;
 
-	public function getAllLightsTemplates ()
+	public function getAllLightsTemplates()
 	{
 		$lights = $this->connecter->getLights();
 

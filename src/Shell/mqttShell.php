@@ -23,7 +23,7 @@ class mqttShell extends Shell {
     }
 
     /**
-     * @param mixed $mqttClass
+     * @param phpMQTT $mqttClass
      */
     public function setMqttClass ($mqttClass) {
         $this->mqttClass = $mqttClass;
@@ -33,27 +33,27 @@ class mqttShell extends Shell {
     /**
      *
      */
-    public function main () {
+    public function main() {
         $this->setMqttClass(new phpMQTT("poseiden.remko.ninja", 1883, "Poseiden Server")); //Change client name to something unique
 
-        if ($this->getMqttClass()->connect()){
+        if ($this->getMqttClass()->connect()) {
             $this->out('Connected to phpMQTT server');
         }
 
 
         $topics['m_bed/#'] = array("qos"=>0, "function"=>__CLASS__ . "::decodeMQTTMessage");
-        $this->getMqttClass()->subscribe($topics,0);
-        while($this->getMqttClass()->proc()){
+        $this->getMqttClass()->subscribe($topics, 0);
+        while ($this->getMqttClass()->proc()) {
 
         }
         $this->getMqttClass()->close();
 
     }
 
-    static public function decodeMQTTMessage($topic,$msg){
-        $topicExploded = explode('/',$topic);
+    static public function decodeMQTTMessage($topic, $msg) {
+        $topicExploded = explode('/', $topic);
 
-        \Cake\Cache\Cache::write('mqttSensor'.$topicExploded[1], $msg);
+        \Cake\Cache\Cache::write('mqttSensor' . $topicExploded[1], $msg);
     }
 
 

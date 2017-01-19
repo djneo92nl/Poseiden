@@ -7,20 +7,20 @@ namespace App\Utility\Device;
  * Loads Device Driver
  */
 class DeviceDriverLoader {
-	public function __construct () {
+	public function __construct() {
 		// TODO: Implement __construct() method.
 	}
 
-	public function __destruct () {
+	public function __destruct() {
 		// TODO: Implement __destruct() method.
 	}
 
 
-	public function runDriverInstall () {
+	public function runDriverInstall() {
 
 	}
 
-	public function runDriverSetup () {
+	public function runDriverSetup() {
 
 	}
 }

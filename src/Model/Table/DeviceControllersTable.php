@@ -21,54 +21,53 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class DeviceControllersTable extends Table
-{
+class DeviceControllersTable extends Table {
 
-    /**
-     * Initialize method
-     *
-     * @param array $config The configuration for the Table.
-     * @return void
-     */
-    public function initialize(array $config)
-    {
-        parent::initialize($config);
+	/**
+	 * Initialize method
+	 *
+	 * @param array $config The configuration for the Table.
+	 * @return void
+	 */
+	public function initialize(array $config)
+	{
+		parent::initialize($config);
 
-        $this->table('device_controllers');
-        $this->displayField('name');
-        $this->primaryKey('id');
+		$this->table('device_controllers');
+		$this->displayField('name');
+		$this->primaryKey('id');
 
-        $this->addBehavior('Timestamp');
+		$this->addBehavior('Timestamp');
 
-        $this->hasMany('Devices', [
-            'foreignKey' => 'device_controller_id'
-        ]);
-    }
+		$this->hasMany('Devices', [
+			'foreignKey' => 'device_controller_id'
+		]);
+	}
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
+	/**
+	 * Default validation rules.
+	 *
+	 * @param \Cake\Validation\Validator $validator Validator instance.
+	 * @return \Cake\Validation\Validator
+	 */
+	public function validationDefault(Validator $validator)
+	{
+		$validator
+			->integer('id')
+			->allowEmpty('id', 'create');
 
-        $validator
-            ->requirePresence('name', 'create')
-            ->notEmpty('name');
+		$validator
+			->requirePresence('name', 'create')
+			->notEmpty('name');
 
-        $validator
-            ->requirePresence('device_controller_type', 'create')
-            ->notEmpty('device_controller_type');
+		$validator
+			->requirePresence('device_controller_type', 'create')
+			->notEmpty('device_controller_type');
 
-        $validator
-            ->requirePresence('device_controller_data', 'create')
-            ->notEmpty('device_controller_data');
+		$validator
+			->requirePresence('device_controller_data', 'create')
+			->notEmpty('device_controller_data');
 
-        return $validator;
-    }
+		return $validator;
+	}
 }
