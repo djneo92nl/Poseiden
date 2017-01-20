@@ -4,4 +4,4 @@ css_dir = '../webroot/css'
 images_dir = '../webroot/img'
 javascripts_dir = '../webroot/js'
 environment = :development
-output_style = :compressed
+output_style = :expanded

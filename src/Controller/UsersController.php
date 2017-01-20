@@ -11,7 +11,16 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
-	/**
+
+    public function initialize() {
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
+        $this->Auth->allow(['add']);
+    }
+
+
+
+    /**
 	 * Index method
 	 *
 	 * @return \Cake\Network\Response|null

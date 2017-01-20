@@ -22,7 +22,7 @@ class DeviceControllersController extends AppController
 
 		$this->set(compact('deviceControllers'));
 		$this->set('_serialize', ['deviceControllers']);
-	}
+    }
 
 	/**
 	 * View method
@@ -48,7 +48,9 @@ class DeviceControllersController extends AppController
 	 */
 	public function add()
 	{
-		$deviceController = $this->DeviceControllers->newEntity();
+		$poseidenInstalledDrivers = Confgure::read("Poseiden.")
+
+        $deviceController = $this->DeviceControllers->newEntity();
 		if ($this->request->is('post')) {
 			$deviceController = $this->DeviceControllers->patchEntity($deviceController, $this->request->data);
 			if ($this->DeviceControllers->save($deviceController)) {

@@ -16,8 +16,8 @@ $cakeDescription = 'Poseiden: Please login';
 		<!--STYLESHEET-->
 		<!--=================================================-->
 
-		<?= $this->Html->css('bootstrap.min.css') ?>
-		<?= $this->Html->css('nifty.min.css') ?>
+		<?= $this->Html->css('bootstrap.css') ?>
+		<?= $this->Html->css('main.css') ?>
 		<?= $this->Html->css('font-awesome.min.css') ?>
 		<!-- Create your own class to load custum image [ SAMPLE ]-->
 		<style>

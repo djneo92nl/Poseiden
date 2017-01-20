@@ -5,7 +5,7 @@
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
+ * Redistributions of fix*les must retain the above copyright notice.
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
@@ -25,8 +25,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 		</title>
 		<?= $this->Html->meta('icon') ?>
 
-		<?= $this->Html->css('bootstrap.min.css') ?>
-		<?= $this->Html->css('nifty.min.css') ?>
+		<?= $this->Html->css('bootstrap.css') ?>
+		<?= $this->Html->css('main.css') ?>
 		<?= $this->Html->css('font-awesome.min.css') ?>
 
 		<?= $this->fetch('meta') ?>
@@ -52,9 +52,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 						<?= $this->fetch('content') ?>
 					</div>
 				</div>
-				<? $cell =$this->cell('menu',[]); ?>
+				<?php $cell = $this->cell('Menu',[]); ?>
 
-				<?=$cell?>
+				<?=$cell ?>
 
 			</div>
 		</div>
