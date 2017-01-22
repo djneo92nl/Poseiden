@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use Cake\Core\Configure;
 use App\Controller\AppController;
 
 /**
@@ -48,7 +49,11 @@ class DeviceControllersController extends AppController
 	 */
 	public function add()
 	{
-		$poseidenInstalledDrivers = Confgure::read("Poseiden.")
+		$poseidenInstalledDrivers = Configure::read("Poseiden.deviceConnector");
+
+        //$poseidenInstalledDrivers
+
+		//var_dump($poseidenInstalledDrivers);
 
         $deviceController = $this->DeviceControllers->newEntity();
 		if ($this->request->is('post')) {

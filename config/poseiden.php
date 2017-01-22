@@ -5,8 +5,15 @@ return [
 	        'PhilipsHueBridge' => [
 		        'name' => 'Hue Bridge',
 		        'brand' => 'Philips',
+                'device discovery' =>  true,
 		        'class' => 'App\Utility\PhilipsHue\DeviceInterface\BridgeConnector'
-	        ]
+	        ],
+            'simpleMQTTConnector' => [
+                'name' => 'Simple MQTT Connector',
+                'brand' => 'Poseiden',
+                'device discovery' => false,
+                'class' => 'App\Utility\Poseiden\DeviceInterface\simpleMqttConnectors'
+            ]
         ],
 	    'devices' => [
             ''
