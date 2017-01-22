@@ -32,19 +32,22 @@
 			<div class="nano">
 				<div class="nano-content" tabindex="0">
 					<ul id="mainnav-menu" class="list-group">
-
 						<!--Category name-->
 						<li class="list-header">Navigation</li>
-						<?php foreach ($menu as $menu): ?>
+
+						<?php foreach ($menu as $menuItem): ?>
 							<li class="link">
-								<a href="users">
+								<a href="<?php echo $this->Url->build([
+									"controller" => $menuItem->controller,
+									"action" => $menuItem->action], [
+									'fullBase' => true ]);?>">
 									<i class="fa fa-dashboard"></i>
 			                    <span class="menu-title">
-									<strong><?= h($menu->name) ?></strong>
+									<strong><?= h($menuItem->name) ?></strong>
 								</span>
 								</a>
 							</li>
-							<?php endforeach ?>
+						<?php endforeach ?>
 
 
 
@@ -64,8 +67,6 @@
 
 							</ul>
 						</li>
-
-
 					</ul>
 
 
