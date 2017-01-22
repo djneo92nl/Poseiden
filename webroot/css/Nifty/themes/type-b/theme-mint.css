@@ -1,0 +1,680 @@
+/* line 1, ../../../../../src/Style/Nifty/themes/_themes.scss */
+body, #content-container {
+  background-color: #F0F3F5;
+  color: #5f5f5f;
+}
+
+/* line 6, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.boxed-layout {
+  background-color: #e4e9ed;
+}
+
+/* line 11, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.page-header {
+  color: #8a8a8a;
+}
+
+/* line 15, ../../../../../src/Style/Nifty/themes/_themes.scss */
+a {
+  color: #5f5f5f;
+}
+/* line 17, ../../../../../src/Style/Nifty/themes/_themes.scss */
+a:hover, a:focus {
+  color: #525252;
+}
+
+/* SEARCHBOX */
+/*======================================*/
+/* line 28, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.searchbox .custom-search-form .input-group-btn:before {
+  background-color: #40c4a7;
+}
+
+/* Scrollbar */
+/*======================================*/
+/* line 38, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.pace .pace-progress,
+.nano > .nano-pane > .nano-slider {
+  background-color: #2b8c77;
+}
+
+/* line 44, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.pace .pace-progress-inner {
+  box-shadow: 0 0 10px #40c4a7, 0 0 5px #40c4a7;
+}
+/* line 47, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.pace .pace-activity {
+  background-color: #40c4a7;
+}
+
+/* NAVBAR */
+/*=====================================*/
+/* line 56, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#navbar {
+  background-color: #F0F3F5;
+}
+
+/* line 60, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#navbar-container {
+  box-shadow: 0 2px 0px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 70, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-header {
+  background-color: #40c4a7;
+}
+
+/* line 74, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-content {
+  background-color: #fff;
+  box-shadow: inset -4px 0 0 0 #40c4a7;
+}
+
+/* BRAND LOGO & TEXT */
+/*====================================*/
+/* line 82, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-brand {
+  background-color: transparent;
+  color: #fff;
+}
+/* line 85, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-brand:hover, .navbar-brand:focus {
+  color: #fff;
+}
+
+/* NAVIGATION */
+/*======================================*/
+/* NAVBAR ICON & BUTTON */
+/*======================================*/
+/* line 100, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-icon-color, .navbar-top-links > li > a:focus:not(.mainnav-toggle) > i, .navbar-top-links > li > a:hover:not(.mainnav-toggle) > i {
+  color: #242424;
+}
+
+/* line 106, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-top-links > li > a {
+  color: #4a4a4a;
+}
+/* line 108, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-top-links > li > a:not(.mainnav-toggle) > i {
+  color: #b0b0b0;
+}
+/* line 111, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-top-links > li > a:focus {
+  background-color: transparent;
+}
+/* line 117, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-top-links > li > a:hover {
+  background-color: #f2f2f2;
+  color: #242424;
+}
+/* line 127, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-top-links > .open > a, .navbar-top-links > .open > a:focus {
+  background-color: #f2f2f2;
+  color: #4a4a4a;
+}
+/* line 133, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.navbar-top-links .tgl-menu-btn > a, .navbar-top-links .tgl-menu-btn > a:hover, .navbar-top-links .tgl-menu-btn > a:focus {
+  color: #fff;
+}
+
+/* NAVBAR RESPONSIVE */
+/*======================================*/
+@media (min-width: 768px) {
+  /* line 142, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #navbar {
+    background-color: transparent;
+  }
+
+  /* line 146, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .navbar-header {
+    background-color: transparent;
+  }
+  /* line 148, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .navbar-header:before {
+    background-color: #40c4a7;
+  }
+
+  /* line 152, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #navbar-container {
+    background-color: #fff;
+  }
+
+  /* line 155, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-in .brand-title,
+  #container.mainnav-sm .brand-title,
+  #container.mainnav-lg .brand-title {
+    color: #fff;
+  }
+
+  /* line 161, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .navbar-top-links .tgl-menu-btn {
+    position: static;
+  }
+  /* line 163, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .navbar-top-links .tgl-menu-btn > a, .navbar-top-links .tgl-menu-btn > a:hover {
+    color: #4a4a4a;
+  }
+  /* line 166, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .navbar-top-links .tgl-menu-btn > a:focus {
+    background-color: transparent;
+    color: #4a4a4a;
+  }
+}
+/* NAVIGATION */
+/*======================================*/
+/* line 178, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav {
+  background-color: #3a3f44;
+}
+/* line 180, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav .list-header {
+  color: #acb2b8;
+}
+
+/* NAVIGATION MENU */
+/*======================================*/
+/* line 193, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu a {
+  color: #d5d8db;
+}
+/* line 198, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu > li > a:hover, #mainnav-menu > li > a:active {
+  color: #fff;
+}
+/* line 201, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu > li > a.hover {
+  color: #fff;
+  background-color: #41474c;
+  box-shadow: inset 4px 0 0 0 #40c4a7;
+}
+/* line 209, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu > .active-link > a, #mainnav-menu > .active-link > a:hover {
+  color: #fff;
+  box-shadow: inset 4px 0 0 0 #40c4a7;
+}
+/* line 215, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu > .active-sub > a, #mainnav-menu > .active-sub > a:hover {
+  color: #fff;
+}
+/* line 219, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu > .active {
+  background-color: #33373c;
+}
+/* line 221, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu > .active .active {
+  background-color: #2e3236;
+}
+
+/* line 229, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu ul a:hover, .menu-popover .sub-menu ul a:hover {
+  color: #fff;
+}
+/* line 235, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu ul ul a:hover, .menu-popover .sub-menu ul ul a:hover {
+  color: #fff;
+}
+/* line 241, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-menu ul .active-link a, .menu-popover .sub-menu ul .active-link a {
+  color: #fff;
+  box-shadow: inset 4px 0 0 0 #40c4a7;
+}
+
+/* line 254, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.mainnav-sm #mainnav-menu a:hover {
+  box-shadow: inset 4px 0 0 0 #40c4a7;
+}
+/* line 259, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.mainnav-sm #mainnav-menu > .active-link > a, #container.mainnav-sm #mainnav-menu > .active-link a:hover, #container.mainnav-sm #mainnav-menu > .active-sub > a, #container.mainnav-sm #mainnav-menu > .active-sub a:hover {
+  background-color: #40c4a7;
+}
+
+/* NAVIGATION - SHORTCUT BUTTONS */
+/*======================================*/
+/* line 272, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#mainnav-shortcut .shortcut-grid {
+  color: #fff;
+}
+
+/* NAVIGATION - WIDGET */
+/*======================================*/
+/* line 281, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.mainnav-widget {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #d5d8db;
+}
+
+@media (min-width: 768px) {
+  /* line 293, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-sm .shortcut-grid:hover {
+    box-shadow: inset 4px 0 0 0 #40c4a7;
+  }
+  /* line 296, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-sm .shortcut-grid:hover,
+  #container.mainnav-sm .popover.mainnav-shortcut {
+    background-color: #41474c;
+    color: #fff;
+  }
+  /* line 303, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-sm #mainnav-menu .active-link > a, #container.mainnav-sm #mainnav-menu .active-sub > a {
+    color: #fff;
+  }
+  /* line 311, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-sm #mainnav .mainnav-widget > .show-small a {
+    color: #d5d8db;
+  }
+  /* line 313, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-sm #mainnav .mainnav-widget > .show-small a:hover {
+    color: #fff;
+    box-shadow: inset 4px 0 0 0 #40c4a7;
+  }
+  /* line 319, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-sm #mainnav .mainnav-widget .hover {
+    color: #fff;
+    background-color: #41474c;
+  }
+
+  /* NAVIGATION - POPOVER  */
+  /*======================================*/
+  /* line 332, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .menu-popover .sub-menu ul {
+    background-color: #33373c;
+  }
+  /* line 334, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .menu-popover .sub-menu ul ul {
+    background-color: #2e3236;
+  }
+  /* line 338, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .menu-popover .sub-menu ul li > a {
+    color: #fff;
+  }
+  /* line 344, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .menu-popover .single-content {
+    color: #fff;
+    background-color: #41474c;
+  }
+  /* line 348, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .menu-popover.popover {
+    background-color: #353a3e;
+    color: #fff;
+  }
+  /* line 352, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .menu-popover > .popover-title {
+    background-color: #41474c;
+    color: #fff;
+  }
+  /* line 356, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .menu-popover .mainnav-widget-content {
+    background-color: #41474c;
+  }
+}
+/* line 361, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.mainnav-sm .popover.mainnav-shortcut {
+  background-color: #353a3e;
+  color: #fff;
+}
+
+/* NAVIGATION - OFFCANVAS */
+/*======================================*/
+@media (min-width: 768px) {
+  /* line 373, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .nav-oc-shadow, #container.mainnav-in.easeInBack #mainnav-container, #container.mainnav-in.easeOutBack #mainnav-container, #container.mainnav-in.easeInOutBack #mainnav-container, #container.mainnav-in.jumping #mainnav-container, #container.mainnav-out.easeInBack #mainnav-container, #container.mainnav-out.easeOutBack #mainnav-container, #container.mainnav-out.easeInOutBack #mainnav-container, #container.mainnav-out.jumping #mainnav-container {
+    box-shadow: -20px 0 0 0 #3a3f44;
+  }
+
+  /* line 385, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container.mainnav-out .brand-title {
+    background-color: transparent;
+    color: #4a4a4a;
+  }
+}
+/* ASIDE */
+/* ===================================== */
+/* line 402, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container #aside-container {
+  background-color: #fff;
+}
+/* line 406, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container #aside .list-link li a:not(.btn) {
+  color: #d1d1d1;
+}
+/* line 408, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container #aside .list-link li a:not(.btn):hover {
+  color: #fff;
+}
+
+/* line 415, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#aside {
+  background-color: #484e55;
+  color: #fff;
+}
+/* line 418, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#aside a:not(.btn):not(.btn-link) {
+  color: inherit;
+}
+/* line 421, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#aside .bord-all,
+#aside .bord-top,
+#aside .bord-btm,
+#aside .bord-left,
+#aside .bord-rgt,
+#aside .bord-hor,
+#aside .bord-ver,
+#aside .list-divider {
+  border-color: #4f565d;
+}
+/* line 431, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#aside .btn-link {
+  color: #fff;
+}
+/* line 434, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#aside .text-muted {
+  color: #a1a8ae;
+}
+
+/* Aside with tabs */
+/* ===================================== */
+/* line 448, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#aside-container #aside .nav-tabs li:not(active) a {
+  background-color: #41474c;
+}
+/* line 456, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .nav-tabs li:not(.active) a {
+  background-color: #f2f2f2;
+}
+
+@media (min-width: 768px) {
+  /* line 466, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #aside {
+    background-color: #484e55;
+  }
+
+  /* line 470, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  #container #aside-container {
+    background-color: #fff;
+  }
+}
+/* ASIDE : BRIGHT COLOR THEMES */
+/* ===================================== */
+/* line 481, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside {
+  background-color: #fff;
+  border-color: #f2f2f2;
+  color: #515151;
+  border: 1px solid #d9e1e6;
+}
+/* line 491, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .text-light {
+  color: #5f5f5f;
+}
+/* line 494, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .bord-all,
+#container.aside-bright #aside .bord-top,
+#container.aside-bright #aside .bord-btm,
+#container.aside-bright #aside .bord-lft,
+#container.aside-bright #aside .bord-rgt,
+#container.aside-bright #aside .bord-hor,
+#container.aside-bright #aside .bord-ver,
+#container.aside-bright #aside .list-divider {
+  border-color: #f7f7f7;
+}
+/* line 504, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .text-muted {
+  color: #acacac;
+}
+/* line 507, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .progress {
+  background-color: #e6e6e6;
+}
+/* line 510, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .list-link li a:not(.btn) {
+  color: #5e5e5e;
+}
+/* line 512, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .list-link li a:not(.btn):hover {
+  color: #515151;
+}
+/* line 516, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside a:not(.btn) {
+  color: #515151;
+}
+/* line 518, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside a:not(.btn):hover, #container.aside-bright #aside a:not(.btn):focus {
+  color: #383838;
+}
+/* line 522, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.aside-bright #aside .btn-link {
+  color: #515151;
+}
+
+/* FOOTER */
+/*======================================*/
+/* line 536, ../../../../../src/Style/Nifty/themes/_themes.scss */
+#container.footer-fixed #footer {
+  background-color: #d1d1d1;
+  color: #5f5f5f;
+}
+
+/* BORDER */
+/*======================================*/
+/* line 546, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-no {
+  border: 0 !important;
+}
+
+/* line 547, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-all {
+  border: 1px solid #e9e9e9;
+}
+
+/* line 548, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-top {
+  border-top: 1px solid #e9e9e9;
+}
+
+/* line 549, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-btm {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+/* line 550, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-lft {
+  border-left: 1px solid #e9e9e9;
+}
+
+/* line 551, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-rgt {
+  border-right: 1px solid #e9e9e9;
+}
+
+/* line 552, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-ver {
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+/* line 556, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.bord-hor {
+  border-right: 1px solid #e9e9e9;
+  border-left: 1px solid #e9e9e9;
+}
+
+/* TIMELINE */
+/*======================================*/
+/* line 567, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline {
+  background-color: #ebeef0;
+  color: #5f5f5f;
+}
+/* line 570, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline:before, .timeline:after {
+  background-color: #cad3df;
+}
+
+/* line 574, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline-time {
+  background-color: #ebeef0;
+  color: #929292;
+}
+
+/* line 578, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline-icon {
+  box-shadow: 0 0 0 7px #F0F3F5;
+}
+/* line 580, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline-icon:empty {
+  background-color: #a4b4c7;
+}
+
+/* line 584, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline-label {
+  background-color: #ffffff;
+  border: 1px solid #e9e9e9;
+}
+/* line 587, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline-label:before {
+  border-right: 10px solid #e6e6e6;
+}
+/* line 590, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.timeline-label:after {
+  border-right: 9px solid #ffffff;
+}
+
+/* line 595, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.panel .timeline-label {
+  background-color: #f7f7f7;
+  border: 1px solid #e3e3e3;
+}
+/* line 598, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.panel .timeline-label:before {
+  border-right-color: #e3e3e3;
+}
+/* line 601, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.panel .timeline-label:after {
+  border-right-color: #f7f7f7;
+}
+
+@media (min-width: 768px) {
+  /* line 611, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .two-column.timeline .timeline-entry:nth-child(even) .timeline-label:before {
+    border-left: 10px solid #e6e6e6;
+  }
+  /* line 614, ../../../../../src/Style/Nifty/themes/_themes.scss */
+  .two-column.timeline .timeline-entry:nth-child(even) .timeline-label:after {
+    border-left: 9px solid #ffffff;
+  }
+}
+/* FORM WIZARD */
+/*======================================*/
+/* line 632, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.wz-icon-bw li.active ~ li > a .icon-wrap {
+  color: #5f5f5f;
+  background-color: rgba(0, 0, 0, 0.17);
+}
+/* line 636, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.wz-icon-bw li:not(.active) > a p {
+  color: #5f5f5f !important;
+}
+
+/* FORM CONTROL  */
+/*======================================*/
+/* line 650, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.form-control:focus {
+  border-color: #40c4a7;
+}
+
+/* LIST GROUP */
+/*======================================*/
+/* line 663, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  background-color: #40c4a7;
+  border-color: #40c4a7;
+  color: #fff;
+}
+/* line 667, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
+  color: #fff;
+}
+
+/* DROPDOWN */
+/*======================================*/
+/* line 683, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.dropdown-menu > li > a:hover {
+  background-color: #40c4a7;
+  color: #fff;
+}
+
+/*======================================*/
+/* PAGER */
+/*======================================*/
+/* line 701, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.pager li > a:hover, .pager li > a:focus {
+  background-color: #ffffff;
+  border-color: #40c4a7;
+  color: #40c4a7;
+  box-shadow: inset 0 0 1px #40c4a7;
+  z-index: 2;
+  -webkit-transition: border-color, 0.3s;
+  transition: border-color, 0.3s;
+}
+
+/*======================================*/
+/* PAGINATION */
+/*======================================*/
+/* line 724, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.pagination > li a:hover, .pagination > li a:focus {
+  border-color: #40c4a7;
+  color: #40c4a7;
+  box-shadow: inset 0 0 1px #40c4a7;
+}
+/* line 733, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #40c4a7;
+  border-color: #40c4a7;
+}
+
+/* TAB */
+/*======================================*/
+/* line 750, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.tab-base .tab-content .tab-footer {
+  background-color: #f9fafb;
+  color: #5f5f5f;
+  border-color: #f3f5f7;
+}
+/* line 759, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.tab-base .nav-tabs > li:not(.active) > a:hover {
+  border-color: #40c4a7;
+}
+
+/* line 774, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.tab-stacked-left.tab-base .nav-tabs > li:not(.active) a:hover {
+  border-color: #40c4a7;
+  border-right-color: transparent;
+}
+/* line 788, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.tab-stacked-right.tab-base .nav-tabs > li:not(.active) a:hover {
+  border-color: #40c4a7;
+  border-left-color: transparent;
+}
+
+/* BUTTONS */
+/*======================================*/
+/* line 804, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.btn-trans {
+  color: #929292;
+}
+
+/* PANELS */
+/*======================================*/
+/* line 816, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.panel:not(.panel-colorful) {
+  border: 1px solid #ebeff2;
+}
+
+/* line 821, ../../../../../src/Style/Nifty/themes/_themes.scss */
+.panel-footer {
+  background-color: #f9fafb;
+  color: #5f5f5f;
+  border-color: #f3f5f7;
+  position: relative;
+}
