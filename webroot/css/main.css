@@ -7867,3 +7867,22 @@ a.list-group-item-dark:hover, a.list-group-item-dark:focus {
 .panel-control > .btn-group:last-child > .btn:first-child {
   border-bottom-right-radius: 0;
 }
+
+/**Mod to make brand icon visible
+ */
+/* line 6, ../../src/Style/main.scss */
+#navbar .brand-title, #navbar .brand-icon, #navbar .brand-icon {
+  padding: 0.2em;
+}
+
+/* line 9, ../../src/Style/main.scss */
+#container.mainnav-lg .brand-icon {
+  width: 40px;
+}
+
+/* Menu full screen mod*/
+/* line 14, ../../src/Style/main.scss */
+#mainnav-menu-wrap {
+  margin-top: 0px;
+  padding-top: 0px;
+}

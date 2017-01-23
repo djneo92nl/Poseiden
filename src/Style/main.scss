@@ -1,1 +1,17 @@
 @import "Nifty/nifty";
+
+
+/**Mod to make brand icon visible
+ */
+#navbar .brand-title, #navbar .brand-icon {
+   padding: 0.2em ;
+}
+#container.mainnav-lg .brand-icon {
+  width: 40px;
+}
+
+/* Menu full screen mod*/
+#mainnav-menu-wrap {
+  margin-top: 0px;
+  padding-top: 0px;
+}
