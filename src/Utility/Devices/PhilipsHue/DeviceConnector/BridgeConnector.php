@@ -1,5 +1,5 @@
 <?php
-namespace App\Utility\PhilipsHue\DeviceInterface;
+namespace App\Utility\PhilipsHue\DeviceConnector;
 
 
 use Phue;
