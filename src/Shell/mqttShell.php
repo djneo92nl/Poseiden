@@ -16,7 +16,7 @@ class mqttShell extends Shell {
     public $mqttClass;
 
     /**
-     * @return mixed
+     * @return phpMQTT
      */
     public function getMqttClass () {
         return $this->mqttClass;
