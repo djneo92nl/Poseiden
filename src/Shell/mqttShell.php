@@ -4,6 +4,7 @@ namespace App\Shell;
 
 use Cake\Console\Shell;
 use djneo\phpMQTT;
+
 /**
  * Class SocketShell
  * @package App\Shell
@@ -33,7 +34,8 @@ class mqttShell extends Shell {
     /**
      *
      */
-    public function main() {
+    public function main ()
+    {
         $this->setMqttClass(new phpMQTT("poseiden.remko.ninja", 1883, "Poseiden Server")); //Change client name to something unique
 
         if ($this->getMqttClass()->connect()) {
@@ -50,12 +52,11 @@ class mqttShell extends Shell {
 
     }
 
-    static public function decodeMQTTMessage($topic, $msg) {
+    static public function decodeMQTTMessage ($topic, $msg)
+    {
         $topicExploded = explode('/', $topic);
 
         \Cake\Cache\Cache::write('mqttSensor' . $topicExploded[1], $msg);
     }
-
-
 
 }

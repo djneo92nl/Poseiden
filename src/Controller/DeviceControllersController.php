@@ -49,11 +49,7 @@ class DeviceControllersController extends AppController
 	 */
 	public function add()
 	{
-		$poseidenInstalledDrivers = Configure::read("Poseiden.deviceConnector");
 
-        //$poseidenInstalledDrivers
-
-		//var_dump($poseidenInstalledDrivers);
 
         $deviceController = $this->DeviceControllers->newEntity();
 		if ($this->request->is('post')) {
@@ -66,6 +62,10 @@ class DeviceControllersController extends AppController
 				$this->Flash->error(__('The device controller could not be saved. Please, try again.'));
 			}
 		}
+
+		$poseidenInstalledDrivers = Configure::read("Poseiden.deviceConnector");
+		$poseidenInstalledDrivers = array_keys($poseidenInstalledDrivers);
+		$this->set(compact('InstalledDrivers', 'poseidenInstalledDrivers'));
 		$this->set(compact('deviceController'));
 		$this->set('_serialize', ['deviceController']);
 	}
@@ -92,6 +92,10 @@ class DeviceControllersController extends AppController
 				$this->Flash->error(__('The device controller could not be saved. Please, try again.'));
 			}
 		}
+
+		$poseidenInstalledDrivers = Configure::read("Poseiden.deviceConnector");
+		$poseidenInstalledDrivers = array_keys($poseidenInstalledDrivers);
+		$this->set(compact('InstalledDrivers', 'poseidenInstalledDrivers'));
 		$this->set(compact('deviceController'));
 		$this->set('_serialize', ['deviceController']);
 	}

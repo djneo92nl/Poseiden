@@ -12,7 +12,7 @@
         <legend><?= __('Add Device Controller') ?></legend>
         <?php
             echo $this->Form->input('name');
-            echo $this->Form->input('device_controller_type');
+            echo $this->Form->input('device_controller_type', ['options' => $poseidenInstalledDrivers]);
             echo $this->Form->input('device_controller_data');
         ?>
     </fieldset>
