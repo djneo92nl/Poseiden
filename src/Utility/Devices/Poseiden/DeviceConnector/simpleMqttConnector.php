@@ -28,15 +28,13 @@ class simpleMqttConnector {
 
 	}
 
-	public function connectToMqttServer ()
-	{
-		if ($this->getMqttClass()->connect()) {
-			$this->out('Connected to ;phpMQTT server')
-		}
-	}
 
-	public function sendMessage ($channel, $message)
+	public function sendMessage ($channel, $message, $qos = 1)
 	{
+		if ($this->mqttClass->connect()) {
+			$this->mqttClass->publish($channel, $message, $qos);
+			$this->mqttClass->close();
+		}
 
 	}
 }
