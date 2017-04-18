@@ -16,7 +16,11 @@ return [
             ]
         ],
 	    'devices' => [
-            ''
+            'h801RGBBeta' => [
+                'name' => 'H801 RGB MQTT',
+                'brand' => 'Poseiden',
+                'version' => '0.0.1'
+            ]
 	    ],
         'deviceTypes' => [
             'simpleDevice' => [
