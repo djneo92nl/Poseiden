@@ -90,7 +90,7 @@ class DevicesController extends AppController
 				$this->Flash->error(__('The device could not be saved. Please, try again.'));
 			}
 		}
-		
+
 		$deviceControllers = $this->Devices->DeviceControllers->find('list', ['limit' => 200]);
 		$this->set(compact('device', 'deviceControllers'));
 		$this->set('_serialize', ['device']);

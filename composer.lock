@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "32e12d02da2f4f24cae364dd36b157c9",
+    "content-hash": "13534a3b0f942aa4ce2dd424131374aa",
     "packages": [
         {
             "name": "aura/intl",
@@ -1067,6 +1067,42 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2017-03-20T09:45:15+00:00"
+        },
+        {
+            "name": "trntv/probe",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trntv/probe.git",
+                "reference": "8a5d6352af261f7d614d23064f474ece7095f370"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/trntv/probe/zipball/8a5d6352af261f7d614d23064f474ece7095f370",
+                "reference": "8a5d6352af261f7d614d23064f474ece7095f370",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Probe\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eugene Terentev",
+                    "email": "eugene@terentev.net"
+                }
+            ],
+            "description": "System information provider",
+            "time": "2017-02-23T07:47:00+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",

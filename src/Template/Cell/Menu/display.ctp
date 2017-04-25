@@ -86,20 +86,26 @@
 							<ul class="list-group">
 								<li class="list-header pad-no pad-ver">Server Status</li>
 								<li class="mar-btm">
-									<span class="label label-primary pull-right">10%</span>
-									<p>CPU Usage</p>
+                                    <?php
+                                    $provider = \Probe\ProviderFactory::create();
+                                    $memory =  abs(number_format($provider->getFreeMem() / $provider->getTotalMem() * 100) - 100 );
+                                    $diskSpace =  abs(number_format(disk_free_space('/') / disk_total_space('/')  * 100) - 100 );
+                                    ?>
+
+									<span class="label label-primary pull-right"><?=$memory;?>%</span>
+									<p>Memory Usage</p>
 									<div class="progress progress-sm">
-										<div class="progress-bar progress-bar-primary" style="width: <?=rand(0, 100)?>%;">
-											<span class="sr-only">10%</span>
+										<div class="progress-bar progress-bar-primary" style="width: <?=$memory;?>%;">
+											<span class="sr-only"><?=$memory;?>%</span>
 										</div>
 									</div>
 								</li>
 								<li class="mar-btm">
-									<span class="label label-purple pull-right">75%</span>
-									<p>Bandwidth</p>
+									<span class="label label-purple pull-right"><?=$diskSpace;?>%</span>
+									<p>Disk Usage</p>
 									<div class="progress progress-sm">
-										<div class="progress-bar progress-bar-purple" style="width: 75%;">
-											<span class="sr-only">75%</span>
+										<div class="progress-bar progress-bar-purple" style="width: <?=$diskSpace;?>%;">
+											<span class="sr-only"><?=$diskSpace;?>%</span>
 										</div>
 									</div>
 								</li>

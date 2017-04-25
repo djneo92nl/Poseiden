@@ -19,7 +19,8 @@
         "djneo/phpmqtt" : "dev-master",
         "djneo/colorz" : "dev-master",
         "friendsofcake/bootstrap-ui": "^0.5.0",
-        "sqmk/phue": "^1.6"
+        "sqmk/phue": "^1.6",
+        "trntv/probe": "^1.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",
