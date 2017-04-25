@@ -79,6 +79,7 @@ class DevicesController extends AppController
 		$device = $this->Devices->get($id, [
 			'contain' => []
 		]);
+
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$device = $this->Devices->patchEntity($device, $this->request->data);
 			if ($this->Devices->save($device)) {
@@ -89,6 +90,7 @@ class DevicesController extends AppController
 				$this->Flash->error(__('The device could not be saved. Please, try again.'));
 			}
 		}
+		
 		$deviceControllers = $this->Devices->DeviceControllers->find('list', ['limit' => 200]);
 		$this->set(compact('device', 'deviceControllers'));
 		$this->set('_serialize', ['device']);
