@@ -47,9 +47,7 @@
 			<div id="boxed">
 				<?= $this->Flash->render() ?>
 				<div id="content-container">
-					<div id="page-content">
-						<?= $this->fetch('content') ?>
-					</div>
+                    <?= $this->fetch('content') ?>
 				</div>
 				<?php $cell = $this->cell('Menu',[]); ?>
 

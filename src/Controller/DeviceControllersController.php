@@ -34,10 +34,16 @@ class DeviceControllersController extends AppController
 	 */
 	public function view($id = null)
 	{
-		$deviceController = $this->DeviceControllers->get($id, [
+        $poseidenInstalledDrivers = Configure::read("Poseiden.deviceConnector");
+        $poseidenInstalledDriversNames = array_keys($poseidenInstalledDrivers);
+
+	    $deviceController = $this->DeviceControllers->get($id, [
 			'contain' => ['Devices']
 		]);
 
+	    $driverData = $poseidenInstalledDrivers[$poseidenInstalledDriversNames[$deviceController->device_controller_type]];
+
+		$this->set('driverData', $driverData);
 		$this->set('deviceController', $deviceController);
 		$this->set('_serialize', ['deviceController']);
 	}
@@ -49,8 +55,6 @@ class DeviceControllersController extends AppController
 	 */
 	public function add()
 	{
-
-
         $deviceController = $this->DeviceControllers->newEntity();
 		if ($this->request->is('post')) {
 			$deviceController = $this->DeviceControllers->patchEntity($deviceController, $this->request->data);

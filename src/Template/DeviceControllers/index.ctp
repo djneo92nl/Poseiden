@@ -1,41 +1,40 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Device Controller'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Devices'), ['controller' => 'Devices', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Device'), ['controller' => 'Devices', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="deviceControllers index large-9 medium-8 columns content">
-    <h3><?= __('Device Controllers') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('device_controller_type') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
+<div id="page-title">
+    <h1 class="page-header text-overflow col-sm-9"><?= __('Device Controllers') ?></h1>
+
+    <div class="col-sm-3 text-lg-right">
+        <?= $this->Html->link(__('New Device Controller'), ['action' => 'add'], [ 'class' => 'btn btn-primary btn-labeled fa fa-plus' ]) ?>
+    </div>
+</div>
+
+<div id="page-content">
+    <div class="row">
+        <div class="eq-height">
             <?php foreach ($deviceControllers as $deviceController): ?>
-            <tr>
-                <td><?= $this->Number->format($deviceController->id) ?></td>
-                <td><?= h($deviceController->name) ?></td>
-                <td><?= h($deviceController->device_controller_type) ?></td>
-                <td><?= h($deviceController->created) ?></td>
-                <td><?= h($deviceController->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $deviceController->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $deviceController->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $deviceController->id], ['confirm' => __('Are you sure you want to delete # {0}?', $deviceController->id)]) ?>
-                </td>
-            </tr>
+                <div class="col-sm-4 col-lg-3">
+                    <!--Panel with Footer-->
+                    <!--===================================================-->
+                    <div class="panel">
+                        <a href="<?= $this->Url->Build(['action' => 'view', $deviceController->id] )?>">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <?= h($deviceController->name) ?>
+                                </h3>
+                            </div>
+                        </a>
+                        <div class="panel-body">
+                            <?= h($deviceController->device_controller_type); ?>
+                        </div>
+                        <div class="panel-footer text-lg-right">
+                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $deviceController->id], [ 'class' => 'btn btn-mint btn-rounded btn-labeled fa fa-pencil-square-o', 'aria-hidden' => 'true', 'escape' => false ]) ?>
+
+                        </div>
+                    </div>
+                    <!--===================================================-->
+                    <!--End Panel with Footer-->
+                </div>
             <?php endforeach; ?>
-        </tbody>
-    </table>
+        </div>
+    </div>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
@@ -45,3 +44,4 @@
         <p><?= $this->Paginator->counter() ?></p>
     </div>
 </div>
+
