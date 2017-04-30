@@ -1,30 +1,51 @@
 <?php
-namespace App\Utility\PhilipsHue\DeviceConnector;
 
+namespace App\Utility\Devices\PhilipsHue\DeviceConnector;
 
+use App\Utility\Devices\Api;
 use Phue;
 
 /**
- * Class DeviceControls
- *
- * Controls Device
+ * Class BridgeConnector
+ * @package App\Utility\Devices\PhilipsHue\DeviceConnector
+ * @author  Remco Janse <remko@djneo.nl>
  */
-class BridgeConnector
+class BridgeConnector implements Api\DeviceControllerInterface
 {
 
-	private $hueUserId;
+    /**
+     * User ID as saved in hue bridge
+     *
+     * @var
+     */
+    private $hueUserId;
 
-	private $connecter;
+    /**
+     * @var
+     */
+    private $connecter;
 
-	public function getAllLightsTemplates()
-	{
-		$lights = $this->connecter->getLights();
 
-		$return = [];
-		foreach ($lights as $light) {
-			$return[] = ['systemID' => $light->getId(), 'type' => $light->getType(), 'name' => $light->getName()];
-		}
+    public function installController()
+    {
+        // TODO: Implement installController() method.
+    }
 
-		return $return;
-	}
+    public function initialiseController()
+    {
+        // TODO: Implement loadController() method.
+    }
+
+    public function getAllLightsTemplates()
+    {
+        $lights = $this->connecter->getLights();
+
+        $return = [];
+        foreach ($lights as $light) {
+            /** @var $light Phue\LightInterface */
+            $return[] = ['systemID' => $light->getId(), 'type' => $light->getType(), 'name' => $light->getName()];
+        }
+
+        return $return;
+    }
 }
