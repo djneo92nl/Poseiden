@@ -16,12 +16,12 @@ class DeviceControllerManager
      * @param $deviceDriverId
      * @return array
      */
-    public function getDeviceControllerConfiguration($deviceDriverId)
+    public function getDeviceControllerConfiguration($deviceControllerId)
     {
-        $poseidenInstalledDevices = Configure::read("Poseiden.deviceConnector");
-        $poseidenInstalledDevicesNames = array_keys($poseidenInstalledDevices);
+        $poseidenInstalledDevicesControllers = Configure::read("Poseiden.deviceConnector");
+        $poseidenInstalledDevicesControllersNames = array_keys($poseidenInstalledDevicesControllers);
 
-        return $poseidenInstalledDevices[$poseidenInstalledDevicesNames[$deviceDriverId]];
+        return $poseidenInstalledDevicesControllers[$poseidenInstalledDevicesControllersNames[$deviceControllerId]];
     }
 
 }
