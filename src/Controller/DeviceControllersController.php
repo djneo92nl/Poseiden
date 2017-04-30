@@ -1,8 +1,9 @@
 <?php
 namespace App\Controller;
 
-use Cake\Core\Configure;
+
 use App\Controller\AppController;
+use App\Utility\Devices;
 
 /**
  * DeviceControllers Controller
@@ -12,7 +13,13 @@ use App\Controller\AppController;
 class DeviceControllersController extends AppController
 {
 
-	/**
+    public function initialize()
+    {
+        parent::initialize();
+    }
+
+
+    /**
 	 * Index method
 	 *
 	 * @return \Cake\Network\Response|null
@@ -34,14 +41,14 @@ class DeviceControllersController extends AppController
 	 */
 	public function view($id = null)
 	{
-        $poseidenInstalledDrivers = Configure::read("Poseiden.deviceConnector");
-        $poseidenInstalledDriversNames = array_keys($poseidenInstalledDrivers);
+        $deviceControllerConfiguration = new Devices\DeviceControllerManager();
+
 
 	    $deviceController = $this->DeviceControllers->get($id, [
 			'contain' => ['Devices']
 		]);
 
-	    $driverData = $poseidenInstalledDrivers[$poseidenInstalledDriversNames[$deviceController->device_controller_type]];
+	    $driverData = $deviceControllerConfiguration ->getDeviceControllerConfiguration($deviceController->device_controller_type);
 
 		$this->set('driverData', $driverData);
 		$this->set('deviceController', $deviceController);
@@ -57,7 +64,7 @@ class DeviceControllersController extends AppController
 	{
         $deviceController = $this->DeviceControllers->newEntity();
 		if ($this->request->is('post')) {
-			$deviceController = $this->DeviceControllers->patchEntity($deviceController, $this->request->data);
+			$deviceController = $this->DeviceControllers->patchEntity($deviceController, $this->request->getData());
 			if ($this->DeviceControllers->save($deviceController)) {
 				$this->Flash->success(__('The device controller has been saved.'));
 
@@ -87,7 +94,7 @@ class DeviceControllersController extends AppController
 			'contain' => []
 		]);
 		if ($this->request->is(['patch', 'post', 'put'])) {
-			$deviceController = $this->DeviceControllers->patchEntity($deviceController, $this->request->data);
+			$deviceController = $this->DeviceControllers->patchEntity($deviceController, $this->request->getData());
 			if ($this->DeviceControllers->save($deviceController)) {
 				$this->Flash->success(__('The device controller has been saved.'));
 

@@ -41,7 +41,6 @@ class AppController extends Controller {
 
 	    $this->loadModel('Profiles');
 
-
 	    $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
@@ -59,10 +58,6 @@ class AppController extends Controller {
                 'action' => 'login'
             ]
         ]);
-
-        // Allow the display action so our pages controller
-        // continues to work.
-       // $this->Auth->allow(['display']);
 
     }
 

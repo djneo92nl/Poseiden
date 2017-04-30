@@ -1,6 +1,6 @@
 <?php
-namespace App\Utility\Poseiden\DeviceConnector;
 
+namespace App\Utility\Devices\Poseiden\DeviceConnector;
 
 use djneo\phpMQTT;
 
@@ -27,7 +27,6 @@ class simpleMqttConnector {
 		
 
 	}
-
 
 	public function sendMessage ($channel, $message, $qos = 1)
 	{

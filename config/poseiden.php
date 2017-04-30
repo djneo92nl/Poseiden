@@ -7,24 +7,24 @@ return [
 		        'brand' => 'Philips',
                 'author' => 'Poseiden',
                 'version' => '0.0.1',
-                'device discovery' =>  true,
-		        'class' => 'App\Utility\PhilipsHue\DeviceConnector\BridgeConnector'
+                'deviceDiscovery' =>  true,
+		        'class' => 'App\Utility\Devices\PhilipsHue\DeviceConnector\BridgeConnector'
 	        ],
             'simpleMQTTConnector' => [
                 'name' => 'Simple MQTT Connector',
                 'brand' => 'Poseiden',
                 'author' => 'Poseiden',
                 'version' => '0.0.1',
-                'devicediscovery' => false,
-                'class' => 'App\Utility\Poseiden\DeviceConnector\simpleMqttConnector'
+                'deviceDiscovery' => false,
+                'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\simpleMqttConnector'
             ],
             'yeeLightConnector' => [
                 'name' => 'YeeLight Connector',
                 'brand' => 'Xiaomi',
                 'author' => 'Poseiden',
                 'version' => '0.0.1',
-                'devicediscovery' => true,
-                'class' => 'App\Utility\Poseiden\DeviceConnector\yeeLightConnector'
+                'deviceDiscovery' => true,
+                'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\yeeLightConnector'
             ]
         ],
 	    'devices' => [
@@ -34,7 +34,7 @@ return [
                 'version' => '0.0.1',
                 'type' => 'colorlight',
                 'deviceConnector' => 'simpleMQTTConnector',
-                'class' => 'App\Utility\Poseiden\Devices\h801RGBBeta'
+                'class' => 'App\Utility\Devices\Poseiden\Devices\h801RGBBeta'
             ]
 	    ],
         'deviceTypes' => [
@@ -50,18 +50,18 @@ return [
                 'description' => 'dimmable Device or light',
                 'dimStep' => '255',
                 'functions' => [
-                    'getState', 'setState', 'setOff', 'setOn'
+                    'getState', 'setState', 'setOff', 'setOn', 'setBrightness', 'getBrightness'
                 ],
                 'interfaceName' => 'dimmableDevice'
             ],
-            'colorlight' => [
+            'colorLight' => [
                 'name' => 'Color Light',
                 'description' => 'Colored Light',
                 'dimStep' => '255',
                 'functions' => [
-                    'getState', 'setState', 'setOff', 'setOn', 'setColor'
+                    'getState', 'setState', 'setOff', 'setOn', 'setBrightness', 'getBrightness', 'setColor', 'getColor'
                 ],
-                'interfaceName' => 'colorlight'
+                'interfaceName' => 'colorLight'
             ]
         ]
     ],

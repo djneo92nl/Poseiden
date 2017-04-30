@@ -1,6 +1,5 @@
 <div id="page-title">
     <h1 class="page-header text-overflow col-sm-9"><?= __('Device Controllers') ?></h1>
-
     <div class="col-sm-3 text-lg-right">
         <?= $this->Html->link(__('New Device Controller'), ['action' => 'add'], [ 'class' => 'btn btn-primary btn-labeled fa fa-plus' ]) ?>
     </div>

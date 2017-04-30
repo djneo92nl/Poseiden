@@ -18,8 +18,9 @@
 <html>
 	<head>
 		<?= $this->Html->charset() ?>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no"" >
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>
 			<?= $this->fetch('title') ?>
 		</title>
 		<?= $this->Html->meta('icon') ?>
