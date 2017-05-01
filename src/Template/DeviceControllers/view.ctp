@@ -48,43 +48,43 @@
                         <div class="related">
                             <h4><?= __('Related Devices') ?></h4>
                             <?php if (!empty($deviceController->devices)): ?>
-                                <div class="table-responsive">
-                                    <table cellpadding="0" cellspacing="0">
-                                        <tr>
-                                            <th scope="col"><?= __('Id') ?></th>
-                                            <th scope="col"><?= __('Device Controller Id') ?></th>
-                                            <th scope="col"><?= __('Name') ?></th>
-                                            <th scope="col"><?= __('Device Type') ?></th>
-                                            <th scope="col"><?= __('Device Template') ?></th>
-                                            <th scope="col"><?= __('Created') ?></th>
-                                            <th scope="col"><?= __('Modified') ?></th>
-                                            <th scope="col" class="actions"><?= __('Actions') ?></th>
-                                        </tr>
-                                        <?php foreach ($deviceController->devices as $devices): ?>
+                                <div class="table-responsive table-striped">
+                                    <table class="table table-striped">
+                                        <thead>
                                             <tr>
-                                                <td><?= h($devices->id) ?></td>
-                                                <td><?= h($devices->device_controller_id) ?></td>
-                                                <td><?= h($devices->name) ?></td>
-                                                <td><?= h($devices->device_type) ?></td>
-                                                <td><?= h($devices->device_template) ?></td>
-                                                <td><?= h($devices->created) ?></td>
-                                                <td><?= h($devices->modified) ?></td>
-                                                <td class="actions">
-                                                    <?= $this->Html->link(__('View'),
-                                                        ['controller' => 'Devices', 'action' => 'view', $devices->id]
-                                                    ) ?>
-                                                    <?= $this->Html->link(__('Edit'),
-                                                        ['controller' => 'Devices', 'action' => 'edit', $devices->id]
-                                                    ) ?>
-                                                    <?= $this->Form->postLink(__('Delete'),
-                                                        ['controller' => 'Devices', 'action' => 'delete', $devices->id],
-                                                        ['confirm' => __('Are you sure you want to delete # {0}?',
-                                                            $devices->id
-                                                        )]
-                                                    ) ?>
-                                                </td>
+                                                <th scope="col"><?= __('Id') ?></th>
+                                                <th scope="col"><?= __('Device Controller Id') ?></th>
+                                                <th scope="col"><?= __('Name') ?></th>
+                                                <th scope="col"><?= __('Device Type') ?></th>
+                                                <th scope="col"><?= __('Device Template') ?></th>
+                                                <th scope="col" class="actions"><?= __('Actions') ?></th>
                                             </tr>
-                                        <?php endforeach; ?>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($deviceController->devices as $devices): ?>
+                                                <tr>
+                                                    <td><?= h($devices->id) ?></td>
+                                                    <td><?= h($devices->device_controller_id) ?></td>
+                                                    <td><?= h($devices->name) ?></td>
+                                                    <td><?= h($devices->device_type) ?></td>
+                                                    <td><?= h($devices->device_template) ?></td>
+                                                    <td class="actions">
+                                                        <?= $this->Html->link(__('View'),
+                                                            ['controller' => 'Devices', 'action' => 'view', $devices->id]
+                                                        ) ?>
+                                                        <?= $this->Html->link(__('Edit'),
+                                                            ['controller' => 'Devices', 'action' => 'edit', $devices->id]
+                                                        ) ?>
+                                                        <?= $this->Form->postLink(__('Delete'),
+                                                            ['controller' => 'Devices', 'action' => 'delete', $devices->id],
+                                                            ['confirm' => __('Are you sure you want to delete # {0}?',
+                                                                $devices->id
+                                                            )]
+                                                        ) ?>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
                                     </table>
                                 </div>
                             <?php endif; ?>

@@ -21,7 +21,14 @@ class BridgeConnector implements Api\DeviceControllerInterface
     private $hueUserId;
 
     /**
+     * Bridge ip
+     *
      * @var
+     */
+    private $hueBridgeIp;
+
+    /**
+     * @var \Phue\Client;
      */
     private $connecter;
 
@@ -31,12 +38,17 @@ class BridgeConnector implements Api\DeviceControllerInterface
         // TODO: Implement installController() method.
     }
 
-    public function initialiseController()
+    public function initialiseController($data)
     {
-        // TODO: Implement loadController() method.
+        if (!empty($data)) {
+            $this->hueUserId = $data->hueUserId;
+            $this->hueBridgeIp = $data->hueBridgeIp;
+
+            $this->connecter = new Phue\Client($this->hueBridgeIp, $this->hueUserId);
+        }
     }
 
-    public function getAllLightsTemplates()
+    public function autoDiscover()
     {
         $lights = $this->connecter->getLights();
 
@@ -47,5 +59,14 @@ class BridgeConnector implements Api\DeviceControllerInterface
         }
 
         return $return;
+    }
+
+    /**
+     * @param int $deviceId
+     * @return Phue\Light
+     */
+    public function returnDevice($deviceId)
+    {
+        return $this->connecter->getLights()[$deviceId];
     }
 }
