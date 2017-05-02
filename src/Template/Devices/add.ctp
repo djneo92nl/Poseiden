@@ -11,9 +11,9 @@
     <fieldset>
         <legend><?= __('Add Device') ?></legend>
         <?php
-            echo $this->Form->input('device_controller_id', ['options' => $deviceControllers]);
             echo $this->Form->input('name');
-            echo $this->Form->input('device_type');
+            echo $this->Form->input('device_controller_id', ['options' => $deviceControllers]);
+            echo $this->Form->input('device_type',['options' => $deviceTypes]);
             echo $this->Form->input('device_template');
         ?>
     </fieldset>

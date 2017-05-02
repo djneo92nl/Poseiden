@@ -35,7 +35,6 @@
 		<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css"
 		      media="screen" charset="utf-8">
-		<?= $this->fetch('script') ?>
 	</head>
 	<body class="nifty-ready pace-done">
 		<div id="container" class="effect mainnav-lg" >
@@ -57,8 +56,8 @@
 			</div>
 		</div>
 
-
-		<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
+        <?= $this->fetch('scriptBottom');?>
+        <?= $this->Html->script("jquery-2.1.1.min.js"); ?>
 		<?= $this->Html->script("bootstrap.min.js"); ?>
 		<?= $this->Html->script("fastclick.min.js"); ?>
 		<?= $this->Html->script("nifty.min.js"); ?>

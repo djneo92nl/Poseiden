@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Core\Configure;
 
 /**
  * Devices Controller
@@ -62,6 +63,16 @@ class DevicesController extends AppController
 				$this->Flash->error(__('The device could not be saved. Please, try again.'));
 			}
 		}
+        $poseidenTypeDevices = Configure::read("Poseiden.deviceTypes");
+
+		$deviceTypes = [];
+
+        foreach ($poseidenTypeDevices as $key => $poseidenTypeDevice) {
+            $deviceTypes[$key] = $poseidenTypeDevice['name'];
+        }
+
+        $this->set(compact('deviceTypes', 'deviceTypes'));
+
 		$deviceControllers = $this->Devices->DeviceControllers->find('list', ['limit' => 200]);
 		$this->set(compact('device', 'deviceControllers'));
 		$this->set('_serialize', ['device']);
