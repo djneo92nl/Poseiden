@@ -5,7 +5,6 @@ namespace App\Utility\Devices;
 use Aura\Intl\Exception;
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
-;
 
 class DeviceControllerManager
 {
