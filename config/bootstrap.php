@@ -225,4 +225,4 @@ Plugin::load('Migrations');
 
 Plugin::load('BootstrapUI');
 
-Plugin::load('DebugKit');
+Plugin::load('TwoFactorAuth', ['bootstrap' => true, 'routes' => true]);

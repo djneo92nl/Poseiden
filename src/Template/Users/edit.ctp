@@ -20,6 +20,9 @@
             echo $this->Form->input('password');
         ?>
     </fieldset>
+    <img src="<?= $secretDataUri ?>" />
+    <p><?= $secret ?></p>
+
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

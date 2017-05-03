@@ -20,7 +20,8 @@
         "djneo/colorz" : "dev-master",
         "friendsofcake/bootstrap-ui": "^0.5.0",
         "sqmk/phue": "^1.6",
-        "trntv/probe": "^1.0"
+        "trntv/probe": "^1.0",
+        "andrej-griniuk/cakephp-two-factor-auth": "^1.2"
     },
     "require-dev": {
         "psy/psysh": "@stable",

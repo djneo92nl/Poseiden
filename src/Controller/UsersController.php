@@ -94,6 +94,12 @@ class UsersController extends AppController
 				$this->Flash->error(__('The user could not be saved. Please, try again.'));
 			}
 		}
+
+        $secret = $this->Auth->tfa->createSecret();
+        $secretDataUri = $this->Auth->tfa->getQRCodeImageAsDataUri($user['username'], $secret);
+
+		$this->set(compact('secretDataUri'));
+		$this->set(compact('secret'));
 		$this->set(compact('user'));
 		$this->set('_serialize', ['user']);
 	}
