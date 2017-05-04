@@ -38,7 +38,7 @@ return [
             ]
 	    ],
         'deviceTypes' => [
-            'simple Device' => [
+            'simpleDevice' => [
                 'name' => 'Simple on off device',
                 'functions' => [
                     'getState', 'setState', 'setOff', 'setOn'
