@@ -63,7 +63,7 @@ class DevicesController extends AppController
 				$this->Flash->error(__('The device could not be saved. Please, try again.'));
 			}
 		}
-        $poseidenTypeDevices = Configure::read("Poseiden.deviceTypes");
+        $poseidenTypeDevices = Configure::read("Poseiden.devices");
 
 		$deviceTypes = [];
 

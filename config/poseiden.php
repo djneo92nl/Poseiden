@@ -27,23 +27,31 @@ return [
                 'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\yeeLightConnector'
             ]
         ],
-	    'devices' => [
+        'devices' => [
             'h801RGBBeta' => [
                 'name' => 'H801 RGB MQTT',
                 'brand' => 'Poseiden',
                 'version' => '0.0.1',
-                'type' => 'colorlight',
+                'type' => 'colorLight',
                 'deviceConnector' => 'simpleMQTTConnector',
                 'class' => 'App\Utility\Devices\Poseiden\Devices\h801RGBBeta'
+            ],
+            'Huedimmablelight' => [
+                'name' => 'Hue Dimmable Light',
+                'brand' => 'Philips',
+                'version' => '0.0.1',
+                'type' => 'dimmableDevice',
+                'deviceConnector' => 'PhilipsHueBridge',
+                'class' => 'App\Utility\Devices\PhilipsHue\DeviceDriver\DimmableLight'
             ]
-	    ],
+        ],
         'deviceTypes' => [
             'simpleDevice' => [
                 'name' => 'Simple on off device',
                 'functions' => [
                     'getState', 'setState', 'setOff', 'setOn'
                 ],
-                'interfaceName' => 'simpleDevice'
+                'interfaceName' => 'SimpleDevice'
             ],
             'dimmableDevice' => [
                 'name' => 'Dimmable Device',
@@ -52,7 +60,7 @@ return [
                 'functions' => [
                     'getState', 'setState', 'setOff', 'setOn', 'setBrightness', 'getBrightness'
                 ],
-                'interfaceName' => 'dimmableDevice'
+                'interfaceName' => 'DimmableDevice'
             ],
             'colorLight' => [
                 'name' => 'Color Light',
@@ -61,7 +69,7 @@ return [
                 'functions' => [
                     'getState', 'setState', 'setOff', 'setOn', 'setBrightness', 'getBrightness', 'setColor', 'getColor'
                 ],
-                'interfaceName' => 'colorLight'
+                'interfaceName' => 'ColorLight'
             ]
         ]
     ],

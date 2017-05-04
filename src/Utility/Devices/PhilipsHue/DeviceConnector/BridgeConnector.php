@@ -60,7 +60,7 @@ class BridgeConnector implements Api\DeviceControllerInterface
 
         return $return;
     }
-
+    
     /**
      * @param int $deviceId
      * @return Phue\Light
