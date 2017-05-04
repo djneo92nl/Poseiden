@@ -58,7 +58,6 @@ class DeviceControllerManager
             die($exception->getMessage());
         }
 
-        $this->deviceController->test();
     }
 
     public function getDeviceController($id, $class, $data)
@@ -66,7 +65,6 @@ class DeviceControllerManager
         $cachedControllerName =  'DeviceController'. $id;
 
         if (($deviceController = \Cake\Cache\Cache::read($cachedControllerName)) === false) {
-            debug('made it');
             $deviceController =  new $class;
             //initialise the controller
             $deviceController->initialiseController($data);
