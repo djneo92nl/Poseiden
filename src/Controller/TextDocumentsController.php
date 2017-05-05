@@ -8,10 +8,12 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\TextDocumentsTable $TextDocuments
  */
-class TextDocumentsController extends AppController {
+class TextDocumentsController extends AppController
+{
 
 
-	public function initialize () {
+	public function initialize ()
+	{
 		parent::initialize();
 		$this->loadComponent('RequestHandler');
 		$this->Auth->allow(['getSensorData']);

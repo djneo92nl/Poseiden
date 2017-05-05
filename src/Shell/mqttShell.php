@@ -20,14 +20,16 @@ class mqttShell extends Shell
 	/**
 	 * @return phpMQTT
 	 */
-	public function getMqttClass () {
+	public function getMqttClass ()
+	{
 		return $this->mqttClass;
 	}
 
 	/**
 	 * @param phpMQTT $mqttClass
 	 */
-	public function setMqttClass ($mqttClass) {
+	public function setMqttClass ($mqttClass)
+	{
 		$this->mqttClass = $mqttClass;
 	}
 

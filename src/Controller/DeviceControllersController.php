@@ -15,7 +15,7 @@ use Cake\Core\Configure;
 class DeviceControllersController extends AppController
 {
 
-	public function initialize()
+	public function initialize ()
 	{
 		parent::initialize();
 	}
@@ -25,7 +25,7 @@ class DeviceControllersController extends AppController
 	 *
 	 * @return \Cake\Network\Response|null
 	 */
-	public function index()
+	public function index ()
 	{
 		$deviceControllers = $this->paginate($this->DeviceControllers);
 
@@ -40,7 +40,7 @@ class DeviceControllersController extends AppController
 	 * @return \Cake\Network\Response|null
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function view($id = null)
+	public function view ($id = null)
 	{
 
 		$deviceController = $this->DeviceControllers->get($id,
@@ -65,9 +65,9 @@ class DeviceControllersController extends AppController
 	/**
 	 * Add method
 	 *
-	 * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
 	 */
-	public function add()
+	public function add ()
 	{
 		$deviceController = $this->DeviceControllers->newEntity();
 		if ($this->request->is('post')) {
@@ -92,10 +92,10 @@ class DeviceControllersController extends AppController
 	 * Edit method
 	 *
 	 * @param string|null $id Device Controller id.
-	 * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
 	 * @throws \Cake\Network\Exception\NotFoundException When record not found.
 	 */
-	public function edit($id = null)
+	public function edit ($id = null)
 	{
 		$deviceController = $this->DeviceControllers->get($id,
 			[
@@ -124,10 +124,10 @@ class DeviceControllersController extends AppController
 	 * Delete method
 	 *
 	 * @param string|null $id Device Controller id.
-	 * @return \Cake\Network\Response|null Redirects to index.
+	 * @return \Cake\Http\Response|null Redirects to index.
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function delete($id = null)
+	public function delete ($id = null)
 	{
 		$this->request->allowMethod(['post', 'delete']);
 		$deviceController = $this->DeviceControllers->get($id);

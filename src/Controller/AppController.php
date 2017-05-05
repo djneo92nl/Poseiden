@@ -28,23 +28,23 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
-    /**
-     * Initialization hook method.
-     *
-     * Use this method to add common initialization code like loading components.
-     *
-     * e.g. `$this->loadComponent('Security');`
-     *
-     * @return void
-     */
-    public function initialize()
-    {
-        parent::initialize();
+	/**
+	 * Initialization hook method.
+	 *
+	 * Use this method to add common initialization code like loading components.
+	 *
+	 * e.g. `$this->loadComponent('Security');`
+	 *
+	 * @return void
+	 */
+	public function initialize()
+	{
+		parent::initialize();
 
-	    $this->loadModel('Profiles');
+		$this->loadModel('Profiles');
 
-	    $this->loadComponent('RequestHandler');
-        $this->loadComponent('Flash');
+		$this->loadComponent('RequestHandler');
+		$this->loadComponent('Flash');
 //        $this->loadComponent('Auth', [
 //            'authenticate' => [
 //                'Form' => [
@@ -60,54 +60,54 @@ class AppController extends Controller
 //                'action' => 'login'
 //            ]
 //        ]);
-        $this->loadComponent('TwoFactorAuth.Auth', [
-            'authenticate' => [
-                'TwoFactorAuth.Form' => [
-                    'fields' => [
-                        'username' => 'username',
-                        'password' => 'password',
-                        'secret' => 'secret', // database field
-                        'remember' => 'remember' // checkbox form field name for "Trust this device" feature
-                    ],
-                    'remember' => true, // enable "Trust this device" feature
-                    'cookie' => [// cookie settings for "Trust this device" feature
-                                  'name' => 'TwoFactorAuth',
-                                  'httpOnly' => true,
-                                  'expires' => '+30 days'
-                    ],
-                    'verifyAction' => [
-                        'prefix' => false,
-                        'controller' => 'TwoFactorAuth',
-                        'action' => 'verify',
-                        'plugin' => 'TwoFactorAuth'
-                    ],
-                ],
-            ],
-        ]);
+		$this->loadComponent('TwoFactorAuth.Auth', [
+			'authenticate' => [
+				'TwoFactorAuth.Form' => [
+					'fields' => [
+						'username' => 'username',
+						'password' => 'password',
+						'secret' => 'secret', // database field
+						'remember' => 'remember' // checkbox form field name for "Trust this device" feature
+					],
+					'remember' => true, // enable "Trust this device" feature
+					'cookie' => [// cookie settings for "Trust this device" feature
+								  'name' => 'TwoFactorAuth',
+								  'httpOnly' => true,
+								  'expires' => '+30 days'
+					],
+					'verifyAction' => [
+						'prefix' => false,
+						'controller' => 'TwoFactorAuth',
+						'action' => 'verify',
+						'plugin' => 'TwoFactorAuth'
+					],
+				],
+			],
+		]);
 
-    }
+	}
 
-    /**
-     * Before render callback.
-     *
-     * @param \Cake\Event\Event $event The beforeRender event.
-     * @return void
-     */
-    public function beforeRender(Event $event)
-    {
-        if (!array_key_exists('_serialize', $this->viewVars) &&
-            in_array($this->response->type(), ['application/json', 'application/xml'])
-        ) {
-            $this->set('_serialize', true);
-        }
+	/**
+	 * Before render callback.
+	 *
+	 * @param \Cake\Event\Event $event The beforeRender event.
+	 * @return void
+	 */
+	public function beforeRender(Event $event)
+	{
+		if (!array_key_exists('_serialize', $this->viewVars) &&
+			in_array($this->response->type(), ['application/json', 'application/xml'])
+		) {
+			$this->set('_serialize', true);
+		}
 
-	    $user = $this->Auth->User();
+		$user = $this->Auth->User();
 
-	    if (isset($user)) {
-		    $this->set('authUser', $user);
-		    $profile = $this->Profiles->get($user['id']);
-		    $this->set(compact('profile'));
-	    }
+		if (isset($user)) {
+			$this->set('authUser', $user);
+			$profile = $this->Profiles->get($user['id']);
+			$this->set(compact('profile'));
+		}
 
-    }
+	}
 }
