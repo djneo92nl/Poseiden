@@ -25,6 +25,7 @@ class DeviceControllerManager
 
     /**
      * @param $deviceDriverId
+     * @param string $deviceConfigControllerId
      * @return array
      */
     public function getDeviceControllerConfiguration ($deviceConfigControllerId)
@@ -43,13 +44,13 @@ class DeviceControllerManager
      * @param string $deviceConfigControllerId
      * @param integer $controllerId
      */
-    public function __construct($deviceConfigControllerId, $data, $controllerId)
+    public function __construct ($deviceConfigControllerId, $data, $controllerId)
     {
         $this->deviceControllerConfiguration = $this->getDeviceControllerConfiguration($deviceConfigControllerId);
 
         $this->deviceControllerId = $controllerId;
 
-        try{
+        try {
             $this->deviceController = $this->getDeviceController(
                 $deviceConfigControllerId,
                 $this->deviceControllerConfiguration['class'],
@@ -62,6 +63,9 @@ class DeviceControllerManager
 
     }
 
+    /**
+     * @param string $id
+     */
     public function getDeviceController($id, $class, $data)
     {
         $cachedControllerName =  'DeviceController'. $id;

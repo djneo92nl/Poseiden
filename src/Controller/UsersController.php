@@ -12,15 +12,15 @@ class UsersController extends AppController
 {
 
 
-    public function initialize () {
-        parent::initialize();
-        $this->loadComponent('RequestHandler');
-        $this->Auth->allow(['add']);
-    }
+	public function initialize () {
+		parent::initialize();
+		$this->loadComponent('RequestHandler');
+		$this->Auth->allow(['add']);
+	}
 
 
 
-    /**
+	/**
 	 * Index method
 	 *
 	 * @return \Cake\Network\Response|null
@@ -125,7 +125,8 @@ class UsersController extends AppController
 	}
 
 	// In src/Controller/UsersController.php
-	public function login () {
+	public function login ()
+	{
 		if ($this->request->is('post')) {
 			$user = $this->Auth->identify();
 			if ($user) {
@@ -136,7 +137,8 @@ class UsersController extends AppController
 		}
 	}
 
-	public function logout () {
+	public function logout ()
+	{
 		$this->Flash->success('You are now logged out.');
 		return $this->redirect($this->Auth->logout());
 	}

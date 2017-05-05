@@ -16,7 +16,7 @@ class ProfilesController extends AppController
 	 *
 	 * @return \Cake\Network\Response|null
 	 */
-	public function index()
+	public function index ()
 	{
 		$profiles = $this->paginate($this->Profiles);
 
@@ -31,7 +31,7 @@ class ProfilesController extends AppController
 	 * @return \Cake\Network\Response|null
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function view($id = null)
+	public function view ($id = null)
 	{
 		$profile = $this->Profiles->get($id, [
 			'contain' => []
@@ -44,9 +44,9 @@ class ProfilesController extends AppController
 	/**
 	 * Add method
 	 *
-	 * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
 	 */
-	public function add() {
+	public function add () {
 		$Profile = $this->Profiles->newEntity();
 		if ($this->request->is('post')) {
 			$Profile = $this->Profiles->patchEntity($Profile, $this->request->data);
@@ -65,10 +65,10 @@ class ProfilesController extends AppController
 	 * Edit method
 	 *
 	 * @param string|null $id Profile id.
-	 * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
 	 * @throws \Cake\Network\Exception\NotFoundException When record not found.
 	 */
-	public function edit($id = null) {
+	public function edit ($id = null) {
 		$Profile = $this->Profiles->get($id, [
 			'contain' => []
 		]);
@@ -89,10 +89,10 @@ class ProfilesController extends AppController
 	 * Delete method
 	 *
 	 * @param string|null $id Profile id.
-	 * @return \Cake\Network\Response|null Redirects to index.
+	 * @return \Cake\Http\Response|null Redirects to index.
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function delete($id = null) {
+	public function delete ($id = null) {
 		$this->request->allowMethod(['post', 'delete']);
 		$Profile = $this->Profiles->get($id);
 		if ($this->Profiles->delete($Profile)) {

@@ -33,12 +33,12 @@ class BridgeConnector implements Api\DeviceControllerInterface
 	private $connecter;
 
 
-	public function installController()
+	public function installController ()
 	{
 		// TODO: Implement installController() method.
 	}
 
-	public function initialiseController($data)
+	public function initialiseController ($data)
 	{
 		if (!empty($data)) {
 			$this->hueUserId = $data->hueUserId;
@@ -48,7 +48,7 @@ class BridgeConnector implements Api\DeviceControllerInterface
 		}
 	}
 
-	public function autoDiscover()
+	public function autoDiscover ()
 	{
 		$lights = $this->connecter->getLights();
 
@@ -65,7 +65,7 @@ class BridgeConnector implements Api\DeviceControllerInterface
 	 * @param int $deviceId
 	 * @return Phue\Light
 	 */
-	public function returnDevice($deviceId)
+	public function returnDevice ($deviceId)
 	{
 		return $this->connecter->getLights()[$deviceId];
 	}

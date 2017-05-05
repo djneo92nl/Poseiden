@@ -13,14 +13,14 @@ interface DeviceControllerInterface
 	/**
 	 * @return mixed
 	 */
-	public function installController();
+	public function installController ();
 	/**
 	 * @return mixed
 	 */
-	public function autoDiscover();
+	public function autoDiscover ();
 
 	/**
 	 * @return mixed
 	 */
-	public function initialiseController($data);
+	public function initialiseController ($data);
 }
