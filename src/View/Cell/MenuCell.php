@@ -6,7 +6,8 @@ use Cake\View\Cell;
 /**
  * Menu cell
  */
-class MenuCell extends Cell {
+class MenuCell extends Cell
+{
 
 	/**
 	 * List of valid options that can be passed into this
@@ -21,7 +22,7 @@ class MenuCell extends Cell {
 	 *
 	 * @return void
 	 */
-	public function display()
+	public function display ()
 	{
 		$this->loadModel('Menu');
 		$menu = $this->Menu->find();

@@ -7,27 +7,27 @@ class DimmableState
     protected $value;
 
     /**
-     * @return mixed
+     * @return integer
      */
-    public function getValue()
+    public function getValue ()
     {
         return $this->value;
     }
 
     /**
-     * @param mixed $value
+     * @param integer $value
      */
-    public function setValue(int $value)
+    public function setValue (int $value)
     {
         $this->value = $value;
     }
 
-    public function incrementValue($value)
+    public function incrementValue ($value)
     {
 
     }
 
-    public function __construct()
+    public function __construct ()
     {
         $value = self::EMPTY_VALUE;
     }

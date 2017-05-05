@@ -23,7 +23,8 @@ use BootstrapUI\View\UIViewTrait;
  *
  * @link http://book.cakephp.org/3.0/en/views.html#the-app-view
  */
-class AppView extends View {
+class AppView extends View
+{
 
 	use UIViewTrait;
 
@@ -36,7 +37,7 @@ class AppView extends View {
 	 *
 	 * @return void
 	 */
-	public function initialize()
+	public function initialize ()
 	{
 		//render the initializeUI method from the UIViewTrait
 		$this->initializeUI(['layout' => false]);

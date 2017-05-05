@@ -10,17 +10,17 @@ namespace App\Utility\Devices\Api;
 interface DeviceControllerInterface
 {
 
-    /**
-     * @return mixed
-     */
-    public function installController();
-    /**
-     * @return mixed
-     */
-    public function autoDiscover();
+	/**
+	 * @return mixed
+	 */
+	public function installController();
+	/**
+	 * @return mixed
+	 */
+	public function autoDiscover();
 
-    /**
-     * @return mixed
-     */
-    public function initialiseController($data);
+	/**
+	 * @return mixed
+	 */
+	public function initialiseController($data);
 }

@@ -11,7 +11,7 @@ use App\Controller\AppController;
 class TextDocumentsController extends AppController {
 
 
-	public function initialize() {
+	public function initialize () {
 		parent::initialize();
 		$this->loadComponent('RequestHandler');
 		$this->Auth->allow(['getSensorData']);
@@ -22,7 +22,7 @@ class TextDocumentsController extends AppController {
 	 *
 	 * @return \Cake\Network\Response|null
 	 */
-	public function index()
+	public function index ()
 	{
 		$textDocuments = $this->paginate($this->TextDocuments);
 
@@ -37,7 +37,7 @@ class TextDocumentsController extends AppController {
 	 * @return \Cake\Network\Response|null
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function view($id = null)
+	public function view ($id = null)
 	{
 		$textDocument = $this->TextDocuments->get($id, [
 			'contain' => []
@@ -50,9 +50,9 @@ class TextDocumentsController extends AppController {
 	/**
 	 * Add method
 	 *
-	 * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
 	 */
-	public function add()
+	public function add ()
 	{
 		$textDocument = $this->TextDocuments->newEntity();
 		if ($this->request->is('post')) {
@@ -72,10 +72,10 @@ class TextDocumentsController extends AppController {
 	 * Edit method
 	 *
 	 * @param string|null $id Text Document id.
-	 * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
 	 * @throws \Cake\Network\Exception\NotFoundException When record not found.
 	 */
-	public function edit($id = null)
+	public function edit ($id = null)
 	{
 		$textDocument = $this->TextDocuments->get($id, [
 			'contain' => []
@@ -93,7 +93,7 @@ class TextDocumentsController extends AppController {
 		$this->set('_serialize', ['textDocument']);
 	}
 
-	public function getSensorData()
+	public function getSensorData ()
 	{
 		$export = ['temp' => \Cake\Cache\Cache::read('mqttSensortemperature'), 'humidity' => \Cake\Cache\Cache::read('mqttSensorhumidity')];
 		$this->set('sensor', $export);
@@ -103,10 +103,10 @@ class TextDocumentsController extends AppController {
 	 * Delete method
 	 *
 	 * @param string|null $id Text Document id.
-	 * @return \Cake\Network\Response|null Redirects to index.
+	 * @return \Cake\Http\Response|null Redirects to index.
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function delete($id = null)
+	public function delete ($id = null)
 	{
 		$this->request->allowMethod(['post', 'delete']);
 		$textDocument = $this->TextDocuments->get($id);

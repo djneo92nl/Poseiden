@@ -17,7 +17,7 @@ class DevicesController extends AppController
 	 *
 	 * @return \Cake\Network\Response|null
 	 */
-	public function index()
+	public function index ()
 	{
 		$this->paginate = [
 			'contain' => ['DeviceControllers']
@@ -35,7 +35,7 @@ class DevicesController extends AppController
 	 * @return \Cake\Network\Response|null
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function view($id = null)
+	public function view ($id = null)
 	{
 		$device = $this->Devices->get($id, [
 			'contain' => ['DeviceControllers']
@@ -48,9 +48,9 @@ class DevicesController extends AppController
 	/**
 	 * Add method
 	 *
-	 * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
 	 */
-	public function add()
+	public function add ()
 	{
 		$device = $this->Devices->newEntity();
 		if ($this->request->is('post')) {
@@ -63,15 +63,15 @@ class DevicesController extends AppController
 				$this->Flash->error(__('The device could not be saved. Please, try again.'));
 			}
 		}
-        $poseidenTypeDevices = Configure::read("Poseiden.devices");
+		$poseidenTypeDevices = Configure::read("Poseiden.devices");
 
 		$deviceTypes = [];
 
-        foreach ($poseidenTypeDevices as $key => $poseidenTypeDevice) {
-            $deviceTypes[$key] = $poseidenTypeDevice['name'];
-        }
+		foreach ($poseidenTypeDevices as $key => $poseidenTypeDevice) {
+			$deviceTypes[$key] = $poseidenTypeDevice['name'];
+		}
 
-        $this->set(compact('deviceTypes', 'deviceTypes'));
+		$this->set(compact('deviceTypes', 'deviceTypes'));
 
 		$deviceControllers = $this->Devices->DeviceControllers->find('list', ['limit' => 200]);
 		$this->set(compact('device', 'deviceControllers'));
@@ -82,10 +82,10 @@ class DevicesController extends AppController
 	 * Edit method
 	 *
 	 * @param string|null $id Device id.
-	 * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
+	 * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
 	 * @throws \Cake\Network\Exception\NotFoundException When record not found.
 	 */
-	public function edit($id = null)
+	public function edit ($id = null)
 	{
 		$device = $this->Devices->get($id, [
 			'contain' => []
@@ -111,10 +111,10 @@ class DevicesController extends AppController
 	 * Delete method
 	 *
 	 * @param string|null $id Device id.
-	 * @return \Cake\Network\Response|null Redirects to index.
+	 * @return \Cake\Http\Response|null Redirects to index.
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
-	public function delete($id = null)
+	public function delete ($id = null)
 	{
 		$this->request->allowMethod(['post', 'delete']);
 		$device = $this->Devices->get($id);

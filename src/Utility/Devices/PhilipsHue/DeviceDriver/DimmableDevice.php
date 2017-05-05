@@ -11,52 +11,52 @@ use Phue;
  */
 class DimmableLight implements Api\DimmableDevice
 {
-    /**
-     *
-     */
-    public function setState ()
-    {
+	/**
+	 *
+	 */
+	public function setState ()
+	{
 
-    }
+	}
 
-    /**
-     *
-     */
-    public function getState ()
-    {
+	/**
+	 *
+	 */
+	public function getState ()
+	{
 
-    }
+	}
 
-    /**
-     *
-     */
-    public function setOff ()
-    {
+	/**
+	 *
+	 */
+	public function setOff ()
+	{
 
-    }
+	}
 
-    /**
-     *
-     */
-    public function setOn ()
-    {
+	/**
+	 *
+	 */
+	public function setOn ()
+	{
 
-    }
+	}
 
-    /**
-     *
-     */
-    public function setBrightness ()
-    {
+	/**
+	 *
+	 */
+	public function setBrightness ()
+	{
 
-    }
+	}
 
-    /**
-     *
-     */
-    public function getBrightness ()
-    {
+	/**
+	 *
+	 */
+	public function getBrightness ()
+	{
 
-    }
+	}
 }
 
