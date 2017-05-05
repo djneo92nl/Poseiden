@@ -31,7 +31,8 @@ class Installer
 	 * @throws \Exception Exception raised by validator.
 	 * @return void
 	 */
-	public static function postInstall (Event $event) {
+	public static function postInstall (Event $event)
+	{
 		$io = $event->getIO();
 
 		$rootDir = dirname(dirname(__DIR__));
@@ -75,7 +76,8 @@ class Installer
 	 * @param \Composer\IO\IOInterface $io IO interface to write to console.
 	 * @return void
 	 */
-	public static function createAppConfig ($dir, $io) {
+	public static function createAppConfig ($dir, $io)
+	{
 		$appConfig = $dir . '/config/app.php';
 		$defaultConfig = $dir . '/config/app.default.php';
 		if (!file_exists($appConfig)) {
@@ -91,7 +93,8 @@ class Installer
 	 * @param \Composer\IO\IOInterface $io IO interface to write to console.
 	 * @return void
 	 */
-	public static function createWritableDirectories ($dir, $io) {
+	public static function createWritableDirectories ($dir, $io)
+	{
 		$paths = [
 			'logs',
 			'tmp',
@@ -121,7 +124,8 @@ class Installer
 	 * @param \Composer\IO\IOInterface $io IO interface to write to console.
 	 * @return void
 	 */
-	public static function setFolderPermissions ($dir, $io) {
+	public static function setFolderPermissions ($dir, $io)
+	{
 		// Change the permissions on a path and output the results.
 		$changePerms = function($path, $perms, $io) {
 			// Get permission bits from stat(2) result.
@@ -165,7 +169,8 @@ class Installer
 	 * @param \Composer\IO\IOInterface $io IO interface to write to console.
 	 * @return void
 	 */
-	public static function setSecuritySalt ($dir, $io) {
+	public static function setSecuritySalt ($dir, $io)
+	{
 		$config = $dir . '/config/app.php';
 		$content = file_get_contents($config);
 

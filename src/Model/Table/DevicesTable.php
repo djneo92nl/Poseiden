@@ -30,7 +30,8 @@ class DevicesTable extends Table
 	 * @param array $config The configuration for the Table.
 	 * @return void
 	 */
-	public function initialize (array $config) {
+	public function initialize (array $config)
+	{
 		parent::initialize($config);
 
 		$this->table('devices');
@@ -51,7 +52,8 @@ class DevicesTable extends Table
 	 * @param \Cake\Validation\Validator $validator Validator instance.
 	 * @return \Cake\Validation\Validator
 	 */
-	public function validationDefault (Validator $validator) {
+	public function validationDefault (Validator $validator)
+	{
 		$validator
 			->integer('id')
 			->allowEmpty('id', 'create');
@@ -78,7 +80,8 @@ class DevicesTable extends Table
 	 * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
 	 * @return \Cake\ORM\RulesChecker
 	 */
-	public function buildRules (RulesChecker $rules) {
+	public function buildRules (RulesChecker $rules)
+	{
 		$rules->add($rules->existsIn(['device_controller_id'], 'DeviceControllers'));
 
 		return $rules;
