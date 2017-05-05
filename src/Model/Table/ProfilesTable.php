@@ -19,74 +19,75 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class ProfilesTable extends Table {
+class ProfilesTable extends Table
+{
 
-    /**
-     * Initialize method
-     *
-     * @param array $config The configuration for the Table.
-     * @return void
-     */
-    public function initialize(array $config) {
-        parent::initialize($config);
+	/**
+	 * Initialize method
+	 *
+	 * @param array $config The configuration for the Table.
+	 * @return void
+	 */
+	public function initialize(array $config) {
+		parent::initialize($config);
 
 		$this->belongsTo('Users', [
 			'foreignKey' => 'user_id',
 			'joinType' => 'INNER'
 		]);
 
-	    $this->table('profiles');
-        $this->displayField('id');
-        $this->primaryKey('id');
+		$this->table('profiles');
+		$this->displayField('id');
+		$this->primaryKey('id');
 
-        $this->addBehavior('Timestamp');
-    }
+		$this->addBehavior('Timestamp');
+	}
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator) {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
+	/**
+	 * Default validation rules.
+	 *
+	 * @param \Cake\Validation\Validator $validator Validator instance.
+	 * @return \Cake\Validation\Validator
+	 */
+	public function validationDefault(Validator $validator) {
+		$validator
+			->integer('id')
+			->allowEmpty('id', 'create');
 
-        $validator
-            ->requirePresence('firstname', 'create')
-            ->notEmpty('firstname');
+		$validator
+			->requirePresence('firstname', 'create')
+			->notEmpty('firstname');
 
-        $validator
-            ->requirePresence('lastname', 'create')
-            ->notEmpty('lastname');
+		$validator
+			->requirePresence('lastname', 'create')
+			->notEmpty('lastname');
 
-        $validator
-            ->email('email')
-            ->requirePresence('email', 'create')
-            ->notEmpty('email');
+		$validator
+			->email('email')
+			->requirePresence('email', 'create')
+			->notEmpty('email');
 
-        $validator
-            ->date('birthday')
-            ->requirePresence('birthday', 'create')
-            ->notEmpty('birthday');
+		$validator
+			->date('birthday')
+			->requirePresence('birthday', 'create')
+			->notEmpty('birthday');
 
-        $validator
-            ->requirePresence('description', 'create')
-            ->notEmpty('description');
+		$validator
+			->requirePresence('description', 'create')
+			->notEmpty('description');
 
-        return $validator;
-    }
+		return $validator;
+	}
 
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules) {
-        $rules->add($rules->isUnique(['email']));
-        return $rules;
-    }
+	/**
+	 * Returns a rules checker object that will be used for validating
+	 * application integrity.
+	 *
+	 * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+	 * @return \Cake\ORM\RulesChecker
+	 */
+	public function buildRules(RulesChecker $rules) {
+		$rules->add($rules->isUnique(['email']));
+		return $rules;
+	}
 }

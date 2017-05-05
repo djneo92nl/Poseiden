@@ -12,7 +12,8 @@ use Cake\ORM\Entity;
  * @property string $creator
  * @property \Cake\I18n\Time $creationDate
  */
-class TextDocument extends Entity {
+class TextDocument extends Entity
+{
 
 	/**
 	 * Fields that can be mass assigned using newEntity() or patchEntity().

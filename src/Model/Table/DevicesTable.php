@@ -21,65 +21,66 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class DevicesTable extends Table {
+class DevicesTable extends Table
+{
 
-    /**
-     * Initialize method
-     *
-     * @param array $config The configuration for the Table.
-     * @return void
-     */
-    public function initialize(array $config) {
-        parent::initialize($config);
+	/**
+	 * Initialize method
+	 *
+	 * @param array $config The configuration for the Table.
+	 * @return void
+	 */
+	public function initialize(array $config) {
+		parent::initialize($config);
 
-        $this->table('devices');
-        $this->displayField('name');
-        $this->primaryKey('id');
+		$this->table('devices');
+		$this->displayField('name');
+		$this->primaryKey('id');
 
-        $this->addBehavior('Timestamp');
+		$this->addBehavior('Timestamp');
 
-        $this->belongsTo('DeviceControllers', [
-            'foreignKey' => 'device_controller_id',
-            'joinType' => 'INNER'
-        ]);
-    }
+		$this->belongsTo('DeviceControllers', [
+			'foreignKey' => 'device_controller_id',
+			'joinType' => 'INNER'
+		]);
+	}
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator) {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
+	/**
+	 * Default validation rules.
+	 *
+	 * @param \Cake\Validation\Validator $validator Validator instance.
+	 * @return \Cake\Validation\Validator
+	 */
+	public function validationDefault(Validator $validator) {
+		$validator
+			->integer('id')
+			->allowEmpty('id', 'create');
 
-        $validator
-            ->requirePresence('name', 'create')
-            ->notEmpty('name');
+		$validator
+			->requirePresence('name', 'create')
+			->notEmpty('name');
 
-        $validator
-            ->requirePresence('device_type', 'create')
-            ->notEmpty('device_type');
+		$validator
+			->requirePresence('device_type', 'create')
+			->notEmpty('device_type');
 
-        $validator
-            ->requirePresence('device_template', 'create')
-            ->notEmpty('device_template');
+		$validator
+			->requirePresence('device_template', 'create')
+			->notEmpty('device_template');
 
-        return $validator;
-    }
+		return $validator;
+	}
 
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules) {
-        $rules->add($rules->existsIn(['device_controller_id'], 'DeviceControllers'));
+	/**
+	 * Returns a rules checker object that will be used for validating
+	 * application integrity.
+	 *
+	 * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+	 * @return \Cake\ORM\RulesChecker
+	 */
+	public function buildRules(RulesChecker $rules) {
+		$rules->add($rules->existsIn(['device_controller_id'], 'DeviceControllers'));
 
-        return $rules;
-    }
+		return $rules;
+	}
 }

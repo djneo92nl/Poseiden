@@ -14,7 +14,8 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  */
-class User extends Entity {
+class User extends Entity
+{
 
 	/**
 	 * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -39,7 +40,7 @@ class User extends Entity {
 		'password'
 	];
 
-	protected function _setPassword($value)
+	protected function _setPassword ($value)
 	{
 		$hasher = new DefaultPasswordHasher();
 		return $hasher->hash($value);

@@ -23,7 +23,7 @@ class DeviceManager
      * @param $deviceDriver
      * @param $deviceController
      */
-    public function __construct($deviceDriverId, $deviceControllerName)
+    public function __construct ($deviceDriverId, $deviceControllerName)
     {
 
         $this->deviceDriverConfiguration = $this::getDeviceConfiguration($deviceDriverId);
@@ -33,7 +33,7 @@ class DeviceManager
      * @param $deviceDriverId
      * @return array
      */
-    static public function getDeviceConfiguration($deviceDriverId)
+    static public function getDeviceConfiguration ($deviceDriverId)
     {
         $poseidenInstalledDevices = Configure::read("Poseiden.devices");
         $poseidenInstalledDevicesNames = array_keys($poseidenInstalledDevices);
@@ -44,8 +44,7 @@ class DeviceManager
     public function runDeviceCommand($command, $data = null)
     {
         try {
-        }
-        catch (\Exception $exception){}
+        } catch (\Exception $exception){}
 
     }
 }

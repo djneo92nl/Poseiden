@@ -15,7 +15,8 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  */
-class Profile extends Entity {
+class Profile extends Entity
+{
 
 	/**
 	 * Fields that can be mass assigned using newEntity() or patchEntity().

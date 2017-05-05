@@ -27,7 +27,7 @@ class DeviceControllerManager
      * @param $deviceDriverId
      * @return array
      */
-    public function getDeviceControllerConfiguration($deviceConfigControllerId)
+    public function getDeviceControllerConfiguration ($deviceConfigControllerId)
     {
         $poseidenInstalledDevicesControllers = Configure::read("Poseiden.deviceConnector");
         $poseidenInstalledDevicesControllersNames = array_keys($poseidenInstalledDevicesControllers);
@@ -40,6 +40,8 @@ class DeviceControllerManager
      *
      * @param $deviceControllerId
      * @param $data
+     * @param string $deviceConfigControllerId
+     * @param integer $controllerId
      */
     public function __construct($deviceConfigControllerId, $data, $controllerId)
     {
@@ -54,7 +56,7 @@ class DeviceControllerManager
                 $data
             );
 
-        }catch (\Exception $exception) {
+        } catch (\Exception $exception) {
             die($exception->getMessage());
         }
 
@@ -77,7 +79,7 @@ class DeviceControllerManager
     /**
      * @return string
      */
-    public function runAutoDiscovery()
+    public function runAutoDiscovery ()
     {
         if ($this->deviceControllerConfiguration['deviceDiscovery']) {
             $devices = $this->deviceController->autoDiscover();

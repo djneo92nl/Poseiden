@@ -16,7 +16,8 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\DeviceController $device_controller
  */
-class Device extends Entity {
+class Device extends Entity
+{
 
 	/**
 	 * Fields that can be mass assigned using newEntity() or patchEntity().

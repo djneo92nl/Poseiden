@@ -9,7 +9,8 @@ use djneo\phpMQTT;
  *
  * Sends mqtt signals
  */
-class simpleMqttConnector {
+class simpleMqttConnector
+{
 
 
 	/**
