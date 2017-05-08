@@ -18,7 +18,7 @@
         "cakephp/plugin-installer": "*",
         "djneo/phpmqtt" : "dev-master",
         "djneo/colorz" : "dev-master",
-        "friendsofcake/bootstrap-ui": "^0.5.0",
+        "friendsofcake/bootstrap-ui": "^0.6.0",
         "sqmk/phue": "^1.6",
         "trntv/probe": "^1.0",
         "andrej-griniuk/cakephp-two-factor-auth": "^1.2"
