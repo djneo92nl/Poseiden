@@ -223,6 +223,6 @@ Type::build('datetime')
 
 Plugin::load('Migrations');
 
-Plugin::load('BootstrapUI');
-
 Plugin::load('TwoFactorAuth', ['bootstrap' => true, 'routes' => true]);
+
+Plugin::load('BootstrapUI');

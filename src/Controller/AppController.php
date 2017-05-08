@@ -45,21 +45,6 @@ class AppController extends Controller
 
 		$this->loadComponent('RequestHandler');
 		$this->loadComponent('Flash');
-//        $this->loadComponent('Auth', [
-//            'authenticate' => [
-//                'Form' => [
-//                    'userModel' => 'users',
-//                    'fields' => [
-//                        'username' => 'username',
-//                        'password' => 'password'
-//                    ]
-//                ]
-//            ],
-//            'loginAction' => [
-//                'controller' => 'Users',
-//                'action' => 'login'
-//            ]
-//        ]);
 		$this->loadComponent('TwoFactorAuth.Auth', [
 			'authenticate' => [
 				'TwoFactorAuth.Form' => [
@@ -84,7 +69,6 @@ class AppController extends Controller
 				],
 			],
 		]);
-
 	}
 
 	/**

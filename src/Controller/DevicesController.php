@@ -11,6 +11,14 @@ use Cake\Core\Configure;
  */
 class DevicesController extends AppController
 {
+	/**
+	 *
+	 */
+	public function initialize()
+	{
+		parent::initialize();
+		$this->loadComponent('RequestHandler');
+	}
 
 	/**
 	 * Index method
@@ -63,8 +71,8 @@ class DevicesController extends AppController
 				$this->Flash->error(__('The device could not be saved. Please, try again.'));
 			}
 		}
-		$poseidenTypeDevices = Configure::read("Poseiden.devices");
 
+		$poseidenTypeDevices = Configure::read("Poseiden.deviceTypes");
 		$deviceTypes = [];
 
 		foreach ($poseidenTypeDevices as $key => $poseidenTypeDevice) {
@@ -92,6 +100,7 @@ class DevicesController extends AppController
 		]);
 
 		if ($this->request->is(['patch', 'post', 'put'])) {
+
 			$device = $this->Devices->patchEntity($device, $this->request->data);
 			if ($this->Devices->save($device)) {
 				$this->Flash->success(__('The device has been saved.'));
@@ -125,5 +134,24 @@ class DevicesController extends AppController
 		}
 
 		return $this->redirect(['action' => 'index']);
+	}
+
+	public function setDeviceState($id = null)
+	{
+		//$this->request->allowMethod(['patch', 'post', 'put']);
+
+		$this->response->statusCode(400);
+		$this->response->body(json_encode(
+			array('status' => 'ERROR', 'message' => 'Bad Request')));
+		$this->RequestHandler->renderAs($this, 'json');
+		$this->set('errors', 'nww');
+		$this->set('_jsonOptions', JSON_FORCE_OBJECT);
+		$this->set('_serialize', ['errors']);
+
+	}
+
+	public function getDeviceState($id = null)
+	{
+
 	}
 }

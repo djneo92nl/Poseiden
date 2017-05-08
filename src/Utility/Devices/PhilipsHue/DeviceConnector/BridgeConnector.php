@@ -51,6 +51,10 @@ class BridgeConnector implements Api\DeviceControllerInterface
 	public function autoDiscover ()
 	{
 		$lights = $this->connecter->getLights();
+		
+		$typeArrays = [
+
+		];
 
 		$return = [];
 		foreach ($lights as $light) {
@@ -65,8 +69,8 @@ class BridgeConnector implements Api\DeviceControllerInterface
 	 * @param int $deviceId
 	 * @return Phue\Light
 	 */
-	public function returnDevice ($deviceId)
+	public function returnDevice($deviceId)
 	{
-		return $this->connecter->getLights()[$deviceId];
+		return $this->connecter->getLights()[ $deviceId ];
 	}
 }
