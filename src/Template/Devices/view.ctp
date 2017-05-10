@@ -41,4 +41,24 @@
         <h4><?= __('Device Template') ?></h4>
         <?= $this->Text->autoParagraph(h($device->device_template)); ?>
     </div>
+
+    <li class="list-group-item">
+        <div class="pull-right">
+            <input id="Power" class="toggle-switch" type="checkbox">
+            <label for="Power"></label>
+        </div>
+        Power
+    </li>
+
+    <script>
+        jQuery("#Power").change(function() {
+            if(this.checked) {
+                $.ajax('<?= $this->Url->Build(['action' => 'runDeviceCommand', $device->id, 'setOn' ] )?>');
+            }
+            if (!this.checked) {
+                $.ajax('<?= $this->Url->Build(['action' => 'runDeviceCommand', $device->id, 'setOff' ] )?>');
+            }
+        });
+    </script>
+
 </div>

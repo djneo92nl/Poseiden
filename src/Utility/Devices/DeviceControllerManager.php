@@ -108,6 +108,16 @@ class DeviceControllerManager
 
     }
 
+	public function runControllerCommand($command, $data = null)
+	{
+		try {
+			return $this->deviceController->$command($data);
+		} catch (\Exception $exception){
+			return false;
+		}
+
+	}
+
 
 
 }

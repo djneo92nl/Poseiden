@@ -28,8 +28,10 @@
 		<?= $this->Html->css('bootstrap.css') ?>
 		<?= $this->Html->css('main.css') ?>
 		<?= $this->Html->css('font-awesome.min.css') ?>
+		<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
 
-		<?= $this->fetch('meta') ?>
+
+        <?= $this->fetch('meta') ?>
 		<?= $this->fetch('css') ?>
 		<?= $this->fetch('script') ?>
 		<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>

@@ -1,35 +1,38 @@
 <?php
+namespace App\Utility\Devices\State;
 
-class DimmableState
+class DimmableState extends OnOffState
 {
 	const EMPTY_VALUE = 0;
 
-	protected $value;
+	public $brightness;
 
 	/**
 	 * @return integer
 	 */
 	public function getValue ()
 	{
-		return $this->value;
+		return $this->brightness;
 	}
 
 	/**
 	 * @param integer $value
 	 */
-	public function setValue (int $value)
+	public function setValue (int $brightness)
 	{
-		$this->value = $value;
+		$this->brightness = $brightness;
 	}
 
-	public function incrementValue ($value)
+	public function incrementValue ()
 	{
 
 	}
 
-	public function __construct ()
+	public function __construct ($state = self::OFF, $brightness = self::EMPTY_VALUE)
 	{
-		$value = self::EMPTY_VALUE;
+		$this->brightness = $brightness;
+
+		parent::__construct($state);
 	}
 
 }

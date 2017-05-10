@@ -94,4 +94,10 @@ class AppController extends Controller
 		}
 
 	}
+
+	protected function setJsonResponse(){
+		$this->loadComponent('RequestHandler');
+		$this->RequestHandler->renderAs($this, 'json');
+		$this->response->type('application/json');
+	}
 }

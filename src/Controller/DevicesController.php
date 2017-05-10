@@ -3,6 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Core\Configure;
+use App\Utility\Devices;
+
 
 /**
  * Devices Controller
@@ -48,6 +50,12 @@ class DevicesController extends AppController
 		$device = $this->Devices->get($id, [
 			'contain' => ['DeviceControllers']
 		]);
+
+		$deviceManager = new Devices\DeviceManager(
+			$device->id ,json_decode($device->device_template),
+			$device['device_controller']
+		);
+
 
 		$this->set('device', $device);
 		$this->set('_serialize', ['device']);
@@ -152,6 +160,39 @@ class DevicesController extends AppController
 
 	public function getDeviceState($id = null)
 	{
+		$device = $this->Devices->get($id, [
+			'contain' => ['DeviceControllers']
+		]);
 
+		$deviceManager = new Devices\DeviceManager(
+			$device->id ,json_decode($device->device_template),
+			$device['device_controller']
+		);
+
+		$data = $deviceManager->runDeviceCommand('getState');
+
+		$this->RequestHandler->renderAs($this, 'json');
+		$this->set('data', $data);
+		$this->set('_jsonOptions', JSON_FORCE_OBJECT);
+		$this->set('_serialize', ['data']);
+	}
+
+	public function runDeviceCommand($id = null, $command = null, $data = null)
+	{
+		$device = $this->Devices->get($id, [
+			'contain' => ['DeviceControllers']
+		]);
+
+		$deviceManager = new Devices\DeviceManager(
+			$device->id ,json_decode($device->device_template),
+			$device['device_controller']
+		);
+
+		$data = $deviceManager->runDeviceCommand($command, $data);
+
+		$this->RequestHandler->renderAs($this, 'json');
+		$this->set('data', $data);
+		$this->set('_jsonOptions', JSON_FORCE_OBJECT);
+		$this->set('_serialize', ['data']);
 	}
 }

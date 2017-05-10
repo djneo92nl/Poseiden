@@ -2,16 +2,20 @@
 
 namespace App\Utility\Devices\Api;
 
+use App\Utility\Devices\State;
+
 /**
  * Interface DimmableDevice
  * @package App\Utility\Devices\Api
  */
 interface DimmableDevice
 {
+	public function __construct($deviceControllerManager, $data);
+
 	/**
 	 * @return mixed
 	 */
-	public function setState ();
+	public function setState (State\DimmableState $state);
 
 	/**
 	 * @return mixed
@@ -31,7 +35,7 @@ interface DimmableDevice
 	/**
 	 * @return mixed
 	 */
-	public function setBrightness ();
+	public function setBrightness ($brightness);
 
 	/**
 	 * @return mixed

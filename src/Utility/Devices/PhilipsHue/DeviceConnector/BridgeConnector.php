@@ -51,7 +51,7 @@ class BridgeConnector implements Api\DeviceControllerInterface
 	public function autoDiscover ()
 	{
 		$lights = $this->connecter->getLights();
-		
+
 		$typeArrays = [
 
 		];
@@ -72,5 +72,18 @@ class BridgeConnector implements Api\DeviceControllerInterface
 	public function returnDevice($deviceId)
 	{
 		return $this->connecter->getLights()[ $deviceId ];
+	}
+
+	public function getInfo()
+	{
+		$bridge = $this->connecter->getBridge();
+
+		$data = [
+			'name' => $bridge->getName(),
+			'MAC Address' => $bridge->getMacAddress(),
+			'ZigBee Channel' => $bridge->getZigBeeChannel()
+		];
+
+		return $data;
 	}
 }

@@ -2,6 +2,7 @@
 
 namespace App\Utility\Devices\Api;
 
+
 /**
  * Interface DeviceControllerInterface
  * @package App\Utility\Devices\Api
