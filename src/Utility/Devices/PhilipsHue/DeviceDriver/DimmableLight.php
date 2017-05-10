@@ -4,7 +4,6 @@ namespace App\Utility\Devices\PhilipsHue\DeviceDriver;
 
 use App\Utility\Devices\Api;
 use App\Utility\Devices\State;
-use Phue;
 
 /**
  * Class DimmableLight
@@ -18,7 +17,7 @@ class DimmableLight extends Common implements Api\DimmableDevice
 	 */
 	protected $state;
 
-	public function __construct($deviceControllerManager, $data)
+	public function __construct ($deviceControllerManager, $data)
 	{
 		parent::__construct($deviceControllerManager, $data);
 		$this->getDeviceFromHue($data->hueId);
@@ -32,7 +31,7 @@ class DimmableLight extends Common implements Api\DimmableDevice
 	public function createState ()
 	{
 
-		$this->state->setState(($this->device->isOn()? 1: 0));
+		$this->state->setState(($this->device->isOn() ? 1 : 0));
 		$this->state->setValue($this->device->getBrightness());
 	}
 
