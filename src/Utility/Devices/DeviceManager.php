@@ -61,12 +61,9 @@ class DeviceManager
 
 	public function createDevice($class, $data, $id)
 	{
-		$cachedDeviceName =  'Device'. $id;
 
-		if (($device = \Cake\Cache\Cache::read($cachedDeviceName)) === false) {
-			$device =  new $class($this->deviceControllerManager, $data);
-			\Cake\Cache\Cache::write($cachedDeviceName, $device);
-		}
+		$device =  new $class($this->deviceControllerManager, $data);
+
 		$this->deviceDriver = $device;
 	}
 

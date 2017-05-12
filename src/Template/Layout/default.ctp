@@ -28,6 +28,7 @@
 		<?= $this->Html->css('bootstrap.css') ?>
 		<?= $this->Html->css('main.css') ?>
 		<?= $this->Html->css('font-awesome.min.css') ?>
+		<?= $this->Html->css('Utils/switchery/switchery.css') ?>
 		<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
 
 
@@ -56,8 +57,24 @@
 				<?=$cell ?>
 
 			</div>
+            <footer id="footer">
+
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <p class="pad-lft">© 2017 Poseiden</p>
+            </footer>
 		</div>
 
+
+        <?= $this->Html->script("Utils/switchery/switchery.js" , ['block' => 'scriptBottom']);?>
+        <?= $this->Html->scriptBlock("
+            var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+elems.forEach(function(html) {
+  var switchery = new Switchery(html);
+});
+        " , ['block' => 'scriptBottom']);?>
         <?= $this->fetch('scriptBottom');?>
         <?= $this->Html->script("jquery-2.1.1.min.js"); ?>
 		<?= $this->Html->script("bootstrap.min.js"); ?>
