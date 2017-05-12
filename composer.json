@@ -1,7 +1,7 @@
 {
-    "name": "cakephp/app",
-    "description": "CakePHP skeleton app",
-    "homepage": "http://cakephp.org",
+    "name": "djneo/poseiden",
+    "description": "Easy Home Automation",
+    "homepage": "http://remko.ninka",
     "type": "project",
     "license": "MIT",
     "repositories": [
