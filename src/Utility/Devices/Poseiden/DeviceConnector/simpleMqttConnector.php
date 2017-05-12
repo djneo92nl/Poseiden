@@ -18,16 +18,20 @@ class simpleMqttConnector
 	 */
 	protected $mqttClass;
 
-	public function initialize ($data)
-	{
-		$this->mqttClass = new phpMQTT($data['host'], $data['port'], $data['clientName']);
-	}
+
 
 	public function installConnector ()
 	{
-		
 
 	}
+
+    /**
+     * @param $data
+     */
+    public function initialiseController ($data)
+    {
+        $this->mqttClass = new phpMQTT($data->host, $data->port, $data->clientName);
+    }
 
 	public function sendMessage ($channel, $message, $qos = 1)
 	{

@@ -32,6 +32,9 @@ class Common {
 
 	}
 
+    /**
+     * @param $id
+     */
 	public function getDeviceFromHue($id)
 	{
 		$this->device = $this->deviceControllerManager->runControllerCommand('returnDevice', $id);

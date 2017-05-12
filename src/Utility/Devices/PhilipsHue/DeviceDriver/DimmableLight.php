@@ -17,6 +17,11 @@ class DimmableLight extends Common implements Api\DimmableDevice
 	 */
 	protected $state;
 
+    /**
+     * DimmableLight constructor.
+     * @param $deviceControllerManager
+     * @param $data
+     */
 	public function __construct ($deviceControllerManager, $data)
 	{
 		parent::__construct($deviceControllerManager, $data);
@@ -44,9 +49,10 @@ class DimmableLight extends Common implements Api\DimmableDevice
 		return $this->state;
 	}
 
-	/**
-	 *
-	 */
+    /**
+     * @param State\DimmableState $state
+     * @return State\DimmableState
+     */
 	public function setState (State\DimmableState $state)
 	{
 		return $this->state;
@@ -68,9 +74,10 @@ class DimmableLight extends Common implements Api\DimmableDevice
 		$this->device->setOn(true);
 	}
 
-	/**
-	 *
-	 */
+    /**
+     * @param $brightness
+     * @return int|mixed
+     */
 	public function setBrightness ($brightness)
 	{
 		$brightness = (int) $brightness;
