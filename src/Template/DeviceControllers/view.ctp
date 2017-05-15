@@ -1,4 +1,3 @@
-<hr>
 <div id="page-content">
     <div class="lg-9">
         <div class="panel panel-primary">
@@ -44,51 +43,7 @@
                         <hr>
                         <h4><?= __('Device Controller Data') ?></h4>
                         <?= $this->Text->autoParagraph(h($deviceController->device_controller_data)); ?>
-                        <hr>
-                        <div class="related">
-                            <h4><?= __('Related Devices') ?></h4>
-                            <?php if (!empty($deviceController->devices)): ?>
-                                <div class="table-responsive table-striped">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"><?= __('Id') ?></th>
-                                                <th scope="col"><?= __('Device Controller Id') ?></th>
-                                                <th scope="col"><?= __('Name') ?></th>
-                                                <th scope="col"><?= __('Device Type') ?></th>
-                                                <th scope="col"><?= __('Device Template') ?></th>
-                                                <th scope="col" class="actions"><?= __('Actions') ?></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($deviceController->devices as $devices): ?>
-                                                <tr>
-                                                    <td><?= h($devices->id) ?></td>
-                                                    <td><?= h($devices->device_controller_id) ?></td>
-                                                    <td><?= h($devices->name) ?></td>
-                                                    <td><?= h($devices->device_type) ?></td>
-                                                    <td><?= h($devices->device_template) ?></td>
-                                                    <td class="actions">
-                                                        <?= $this->Html->link(__('View'),
-                                                            ['controller' => 'Devices', 'action' => 'view', $devices->id]
-                                                        ) ?>
-                                                        <?= $this->Html->link(__('Edit'),
-                                                            ['controller' => 'Devices', 'action' => 'edit', $devices->id]
-                                                        ) ?>
-                                                        <?= $this->Form->postLink(__('Delete'),
-                                                            ['controller' => 'Devices', 'action' => 'delete', $devices->id],
-                                                            ['confirm' => __('Are you sure you want to delete # {0}?',
-                                                                $devices->id
-                                                            )]
-                                                        ) ?>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+
                     </div>
 
                     <div id="config-tabs-box-2" class="tab-pane fade">
@@ -114,6 +69,18 @@
                 </div>
             </div>
         </div>
+	    <?php if (!empty($deviceController->devices)):?>
+            <div class="row">
+                <hr>
+                <h3 class="page-header text-overflow col-sm-9"><?= __('Devices') ?></h3>
+
+                <div class="eq-height">
+                    <?php foreach ($deviceController->devices as $device): ?>
+                        <?= $this->element('Devices/dimmableLight',['device' => $device,'cache' => true]) ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 

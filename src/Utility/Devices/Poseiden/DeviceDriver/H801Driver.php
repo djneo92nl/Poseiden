@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Utility\Devices\Poseiden\DeviceDriver;
+
 use App\Utility\Devices\Api\ColorLight;
 use App\Utility\Devices\State\ColorState;
 

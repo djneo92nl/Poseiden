@@ -29,12 +29,14 @@
 		<?= $this->Html->css('main.css') ?>
 		<?= $this->Html->css('font-awesome.min.css') ?>
 		<?= $this->Html->css('Utils/switchery/switchery.css') ?>
+		<?= $this->Html->css('Utils/noUiSlider/nouislider.min.css') ?>
 		<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
 
 
         <?= $this->fetch('meta') ?>
 		<?= $this->fetch('css') ?>
 		<?= $this->fetch('script') ?>
+
 		<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css"
 		      media="screen" charset="utf-8">
@@ -68,7 +70,24 @@
 
 
         <?= $this->Html->script("Utils/switchery/switchery.js" , ['block' => 'scriptBottom']);?>
+        <?= $this->Html->script("Utils/noUiSlider/nouislider.js" , ['block' => 'scriptBottom']);?>
         <?= $this->Html->scriptBlock("
+        
+         function toggleSwitch(switch_elem, on) {
+        if (on){ // turn it on
+            if ($(switch_elem)[0].checked){ // it already is so do
+                // nothing
+            }else{
+                $(switch_elem).trigger('click').attr(\"checked\", \"checked\"); // it was off, turn it on
+            }
+        }else{ // turn it off
+            if ($(switch_elem)[0].checked){ // it's already on so
+                $(switch_elem).trigger('click').removeAttr(\"checked\"); // turn it off
+            }else{ // otherwise
+                // nothing, already off
+            }
+        }
+    }
             var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
 elems.forEach(function(html) {

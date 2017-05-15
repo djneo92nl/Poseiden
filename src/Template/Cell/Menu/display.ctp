@@ -36,12 +36,18 @@
 						<li class="list-header">Navigation</li>
 
 						<?php foreach ($menu as $menuItem): ?>
+                            <?php
+							$icon = $menuItem->icon;
+                                if (empty($icon)) {
+                                    $icon = 'fa-dashboard';
+                                }
+                            ?>
 							<li class="link">
-								<a href="<?php echo $this->Url->build([
+								<a href="<?= $this->Url->build([
 									"controller" => $menuItem->controller,
 									"action" => $menuItem->action], [
 									'fullBase' => true ]);?>">
-									<i class="fa fa-dashboard"></i>
+									<i class="fa <?=$icon;?>"></i>
 			                    <span class="menu-title">
 									<strong><?= h($menuItem->name) ?></strong>
 								</span>
