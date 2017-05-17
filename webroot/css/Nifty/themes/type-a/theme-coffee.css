@@ -16,11 +16,11 @@ body, #content-container {
 
 /* line 15, ../../../../../src/Style/Nifty/themes/_themes.scss */
 a {
-  color: #5f5f5f;
+  color: #69696d;
 }
 /* line 17, ../../../../../src/Style/Nifty/themes/_themes.scss */
 a:hover, a:focus {
-  color: #525252;
+  color: #5c5c60;
 }
 
 /* SEARCHBOX */

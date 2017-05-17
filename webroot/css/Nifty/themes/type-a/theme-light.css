@@ -16,11 +16,11 @@ body, #content-container {
 
 /* line 15, ../../../../../src/Style/Nifty/themes/_themes.scss */
 a {
-  color: #5f5f5f;
+  color: #69696d;
 }
 /* line 17, ../../../../../src/Style/Nifty/themes/_themes.scss */
 a:hover, a:focus {
-  color: #525252;
+  color: #5c5c60;
 }
 
 /* SEARCHBOX */
@@ -509,8 +509,8 @@ a:hover, a:focus {
 /*======================================*/
 /* line 567, ../../../../../src/Style/Nifty/themes/_themes.scss */
 .timeline {
-  background-color: #ebeef0;
-  color: #5f5f5f;
+  background-color: #e9e9e9;
+  color: #69696d;
 }
 /* line 570, ../../../../../src/Style/Nifty/themes/_themes.scss */
 .timeline:before, .timeline:after {
@@ -519,8 +519,8 @@ a:hover, a:focus {
 
 /* line 574, ../../../../../src/Style/Nifty/themes/_themes.scss */
 .timeline-time {
-  background-color: #ebeef0;
-  color: #929292;
+  background-color: #e9e9e9;
+  color: #9c9ca0;
 }
 
 /* line 578, ../../../../../src/Style/Nifty/themes/_themes.scss */
