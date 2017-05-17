@@ -31,6 +31,7 @@
 		<?= $this->Html->css('Utils/switchery/switchery.css') ?>
 		<?= $this->Html->css('Utils/noUiSlider/nouislider.min.css') ?>
 		<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
+		<?= $this->Html->script("Utils/iro/iro.min.js");?>
 
 
         <?= $this->fetch('meta') ?>
@@ -42,7 +43,7 @@
 		      media="screen" charset="utf-8">
 	</head>
 	<body class="nifty-ready pace-done">
-		<div id="container" class="effect mainnav-lg" >
+		<div id="container" class="effect mainnav-lg mainnav-fixed navbar-fixed" >
 			<header id="navbar">
 				<div id="navbar-container" class="boxed">
 					<?= $this->element('navbar',['cache' => true]) ?>

@@ -45,7 +45,7 @@ interface ColorLight
 	/**
 	 * @return mixed
 	 */
-	public function setColor();
+	public function setColor($color);
 	/**
 	 * @return mixed
 	 */

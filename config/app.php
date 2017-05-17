@@ -84,9 +84,7 @@ return [
      */
     'Cache' => [
         'default' => [
-            'className' => 'File',
-            'path' => CACHE,
-            'url' => env('CACHE_DEFAULT_URL', null),
+            'className' => 'Redis'
         ],
 
         /**
@@ -338,8 +336,8 @@ return [
      * To use database sessions, load the SQL file located at config/Schema/sessions.sql
      */
     'Session' => [
-        'defaults' => 'php',
-        'timeout' => 24*60,
+        'defaults' => 'cache',
+        'timeout' => 360000,
         'cookie' => 'poseiden'
     ],
 ];

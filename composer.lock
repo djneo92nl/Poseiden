@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0239d5e62c55b8c3c2a322ce7366d197",
+    "content-hash": "1181587bd233949d085ab107e50b37cb",
     "packages": [
         {
             "name": "andrej-griniuk/cakephp-two-factor-auth",
@@ -328,6 +328,58 @@
             "time": "2017-03-21T13:48:47+00:00"
         },
         {
+            "name": "clue/socket-raw",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-socket-raw.git",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-socket-raw/zipball/8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-sockets": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Socket\\Raw\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Simple and lightweight OOP wrapper for PHP's low level sockets extension (ext-sockets)",
+            "homepage": "https://github.com/clue/php-socket-raw",
+            "keywords": [
+                "Socket",
+                "client",
+                "datagram",
+                "dgram",
+                "icmp",
+                "ipv6",
+                "server",
+                "stream",
+                "tcp",
+                "udg",
+                "udp",
+                "unix"
+            ],
+            "time": "2015-03-18T23:48:01+00:00"
+        },
+        {
             "name": "djneo/colorz",
             "version": "dev-master",
             "source": {
@@ -406,6 +458,50 @@
                 "source": "https://github.com/djneo92nl/phpMQTT/tree/master"
             },
             "time": "2016-08-23 21:50:03"
+        },
+        {
+            "name": "elberth90/yeelight-api-client",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elberth90/yeelight-api-client.git",
+                "reference": "f1419a8a439548e4331124b1ffb34221460af321"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elberth90/yeelight-api-client/zipball/f1419a8a439548e4331124b1ffb34221460af321",
+                "reference": "f1419a8a439548e4331124b1ffb34221460af321",
+                "shasum": ""
+            },
+            "require": {
+                "clue/socket-raw": "~1.2",
+                "php": ">=7.0.0",
+                "react/promise": "^2.5"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.12",
+                "humbug/humbug": "~1.0@dev",
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yeelight\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkadiusz Gac",
+                    "email": "arkadiusz.gac@gmail.com"
+                }
+            ],
+            "description": "Client library for Yeelight API",
+            "homepage": "http://www.yeelight.com/en_US/developer",
+            "time": "2017-01-24T00:09:05+00:00"
         },
         {
             "name": "friendsofcake/bootstrap-ui",
@@ -654,6 +750,52 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "react/promise",
+            "version": "v2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/promise.git",
+                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/62785ae604c8d69725d693eb370e1d67e94c4053",
+                "reference": "62785ae604c8d69725d693eb370e1d67e94c4053",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "keywords": [
+                "promise",
+                "promises"
+            ],
+            "time": "2017-03-25T12:08:31+00:00"
         },
         {
             "name": "robmorgan/phinx",

@@ -1,4 +1,4 @@
-<div class="navbar-header">
+<div class="navbar-header ">
 	<a href="/" class="navbar-brand">
 		<img src="/img/PoseidenLogo.png" alt="Nifty Logo" class="brand-icon">
 		<div class="brand-title">

@@ -10,7 +10,7 @@ return [
                 'deviceDiscovery' =>  true,
 		        'class' => 'App\Utility\Devices\PhilipsHue\DeviceConnector\BridgeConnector'
 	        ],
-            'simpleMQTTConnector' => [
+            'SimpleMQTTConnector' => [
                 'name' => 'Simple MQTT Connector',
                 'brand' => 'Poseiden',
                 'author' => 'Poseiden',
@@ -18,13 +18,13 @@ return [
                 'deviceDiscovery' => false,
                 'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\simpleMqttConnector'
             ],
-            'yeeLightConnector' => [
+            'YeeLightConnector' => [
                 'name' => 'YeeLight Connector',
                 'brand' => 'Xiaomi',
                 'author' => 'Poseiden',
                 'version' => '0.0.1',
                 'deviceDiscovery' => true,
-                'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\yeeLightConnector'
+                'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\YeeLightConnector'
             ]
         ],
         'devices' => [
@@ -34,7 +34,15 @@ return [
                 'version' => '0.0.1',
                 'type' => 'colorLight',
                 'deviceConnector' => 'simpleMQTTConnector',
-                'class' => 'App\Utility\Devices\Poseiden\Devices\h801RGBBeta'
+                'class' => 'App\Utility\Devices\Poseiden\DeviceDriver\H801RGBBeta'
+            ],
+            'YeeLightText' => [
+                'name' => 'Yee Test Light',
+               'brand' => 'Poseiden',
+               'version' => '0.0.1',
+               'type' => 'dimmableDevice',
+               'deviceConnector' => 'YeeLightConnector',
+               'class' => 'App\Utility\Devices\Poseiden\DeviceDriver\YeeColorLight'
             ],
             'Huedimmablelight' => [
                 'name' => 'Hue Dimmable Light',
@@ -43,6 +51,14 @@ return [
                 'type' => 'dimmableDevice',
                 'deviceConnector' => 'PhilipsHueBridge',
                 'class' => 'App\Utility\Devices\PhilipsHue\DeviceDriver\DimmableLight'
+            ],
+            'HueColorlight' => [
+	            'name' => 'Hue Color Light',
+	            'brand' => 'Philips',
+	            'version' => '0.0.1',
+	            'type' => 'colorLight',
+	            'deviceConnector' => 'PhilipsHueBridge',
+	            'class' => 'App\Utility\Devices\PhilipsHue\DeviceDriver\ColorLight'
             ]
         ],
         'deviceTypes' => [

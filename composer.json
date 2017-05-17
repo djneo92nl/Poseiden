@@ -21,7 +21,8 @@
         "friendsofcake/bootstrap-ui": "^0.6.0",
         "sqmk/phue": "^1.6",
         "trntv/probe": "^1.0",
-        "andrej-griniuk/cakephp-two-factor-auth": "^1.2"
+        "andrej-griniuk/cakephp-two-factor-auth": "^1.2",
+        "elberth90/yeelight-api-client": "^0.5.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",

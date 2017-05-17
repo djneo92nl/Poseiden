@@ -146,8 +146,6 @@ class UsersController extends AppController
 
 		$this->Auth->setUser($user);
 		return $this->redirect('/');
-
-
 	}
 
 	public function logout ()
