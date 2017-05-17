@@ -61,9 +61,7 @@ class DeviceManager
 
 	public function createDevice($class, $data, $id)
 	{
-
 		$device =  new $class($this->deviceControllerManager, $data);
-
 		$this->deviceDriver = $device;
 	}
 

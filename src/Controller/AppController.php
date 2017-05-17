@@ -45,30 +45,45 @@ class AppController extends Controller
 
 		$this->loadComponent('RequestHandler');
 		$this->loadComponent('Flash');
-		$this->loadComponent('TwoFactorAuth.Auth', [
+		$this->loadComponent('Auth', [
 			'authenticate' => [
-				'TwoFactorAuth.Form' => [
+				'Form' => [
+					'userModel' => 'users',
 					'fields' => [
 						'username' => 'username',
-						'password' => 'password',
-						'secret' => 'secret', // database field
-						'remember' => 'remember' // checkbox form field name for "Trust this device" feature
-					],
-					'remember' => true, // enable "Trust this device" feature
-					'cookie' => [// cookie settings for "Trust this device" feature
-								  'name' => 'TwoFactorAuth',
-								  'httpOnly' => true,
-								  'expires' => '+30 days'
-					],
-					'verifyAction' => [
-						'prefix' => false,
-						'controller' => 'TwoFactorAuth',
-						'action' => 'verify',
-						'plugin' => 'TwoFactorAuth'
-					],
-				],
+						'password' => 'password'
+					]
+				]
 			],
+			'loginAction' => [
+				'controller' => 'Users',
+				'action' => 'login'
+			]
 		]);
+//		$this->loadComponent('TwoFactorAuth.Auth', [
+//			'authenticate' => [
+//				'TwoFactorAuth.Form' => [
+//					'fields' => [
+//						'username' => 'username',
+//						'password' => 'password',
+//						'secret' => 'secret', // database field
+//						'remember' => 'remember' // checkbox form field name for "Trust this device" feature
+//					],
+//					'remember' => true, // enable "Trust this device" feature
+//					'cookie' => [// cookie settings for "Trust this device" feature
+//								  'name' => 'TwoFactorAuth',
+//								  'httpOnly' => true,
+//								  'expires' => '+30 days'
+//					],
+//					'verifyAction' => [
+//						'prefix' => false,
+//						'controller' => 'TwoFactorAuth',
+//						'action' => 'verify',
+//						'plugin' => 'TwoFactorAuth'
+//					],
+//				],
+//			],
+//		]);
 	}
 
 	/**

