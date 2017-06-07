@@ -50,7 +50,8 @@ class DeviceControllerManager
 
         $this->deviceControllerId = $controllerId;
 
-        try {
+
+	    try {
             $this->deviceController = $this->getDeviceController(
                 $deviceConfigControllerId,
                 $this->deviceControllerConfiguration['class'],
@@ -69,13 +70,15 @@ class DeviceControllerManager
     public function getDeviceController($id, $class, $data)
     {
         $cachedControllerName =  'DeviceController'. $id;
-
-        if (($deviceController = \Cake\Cache\Cache::read($cachedControllerName)) === false) {
-            $deviceController =  new $class;
-            //initialise the controller
-            $deviceController->initialiseController($data);
-            \Cake\Cache\Cache::write($cachedControllerName, $deviceController);
-        }
+	    $deviceController =  new $class;
+	    $deviceController->initialiseController($data);
+//	    \Cake\Cache\Cache::write($cachedControllerName, $deviceController);
+//        if (($deviceController = \Cake\Cache\Cache::read($cachedControllerName)) === false) {
+//            $deviceController =  new $class;
+//            //initialise the controller
+//            $deviceController->initialiseController($data);
+//            \Cake\Cache\Cache::write($cachedControllerName, $deviceController);
+//        }
 
         return $deviceController;
     }

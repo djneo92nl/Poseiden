@@ -16,7 +16,7 @@ return [
                 'author' => 'Poseiden',
                 'version' => '0.0.1',
                 'deviceDiscovery' => false,
-                'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\simpleMqttConnector'
+                'class' => 'App\Utility\Devices\Poseiden\DeviceConnector\SimpleMqttConnector'
             ],
             'YeeLightConnector' => [
                 'name' => 'YeeLight Connector',
@@ -28,7 +28,7 @@ return [
             ]
         ],
         'devices' => [
-            'h801RGBBeta' => [
+            'H801RGBBeta' => [
                 'name' => 'H801 RGB MQTT',
                 'brand' => 'Poseiden',
                 'version' => '0.0.1',

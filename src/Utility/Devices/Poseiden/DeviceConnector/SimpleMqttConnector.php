@@ -18,7 +18,7 @@ class simpleMqttConnector
 	 */
 	protected $mqttClass;
 
-
+	protected $savedData;
 
 	public function installConnector ()
 	{
@@ -30,15 +30,19 @@ class simpleMqttConnector
      */
     public function initialiseController ($data)
     {
-        $this->mqttClass = new phpMQTT($data->host, $data->port, $data->clientName);
+    	$this->savedData = $data;
+
     }
 
-	public function sendMessage ($channel, $message, $qos = 1)
+	public function sendMessage ($data)
 	{
+		$this->mqttClass = new phpMQTT($this->savedData->host, $this->savedData->port, $this->savedData->clientName);
+
 		if ($this->mqttClass->connect()) {
-			$this->mqttClass->publish($channel, $message, $qos);
-			$this->mqttClass->close();
+			$this->mqttClass->publish($data['topic'], $data['message'], $data['qos']);
+
 		}
+		unset($this->mqttClass);
 
 	}
 }

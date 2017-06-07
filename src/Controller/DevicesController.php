@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\DeviceController;
 use Cake\Core\Configure;
 use App\Utility\Devices;
 
@@ -68,6 +69,7 @@ class DevicesController extends AppController
 	 */
 	public function add ()
 	{
+		//dd(json_encode(['DeviceConfig' =>  Devices\DeviceManager::getDeviceConfiguration('H801RGBBeta'), 'data' => ['topic' => 'device/003/command']]));
 		$device = $this->Devices->newEntity();
 		if ($this->request->is('post')) {
 			$device = $this->Devices->patchEntity($device, $this->request->data);

@@ -72,11 +72,11 @@
 	    <?php if (!empty($deviceController->devices)):?>
             <div class="row">
                 <hr>
-                <h3 class="page-header text-overflow col-sm-9"><?= __('Devices') ?></h3>
+                <h3 class="page-header pad-btm text-overflow col-sm-9"><?= __('Devices') ?></h3>
 
                 <div class="eq-height">
                     <?php foreach ($deviceController->devices as $device): ?>
-                        <?= $this->element('Devices/dimmableLight',['device' => $device,'cache' => true]) ?>
+	                    <?= $this->element('Devices/' . (str_replace(' ', '', $device->device_type)),['device' => $device,'cache' => true]) ?>
                     <?php endforeach; ?>
                 </div>
             </div>

@@ -7,7 +7,7 @@
 </div>
 <div id="page-content">
     <div class="row">
-        <div class="eq-height">
+        <div >
 			<?php foreach ($devices as $device): ?>
 				<?= $this->element('Devices/' . (str_replace(' ', '', $device->device_type)),['device' => $device,'cache' => true]) ?>
 			<?php endforeach; ?>

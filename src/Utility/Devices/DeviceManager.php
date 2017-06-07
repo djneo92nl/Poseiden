@@ -56,7 +56,7 @@ class DeviceManager
 		$poseidenInstalledDevices = Configure::read("Poseiden.devices");
 		$poseidenInstalledDevicesNames = array_keys($poseidenInstalledDevices);
 
-		return $poseidenInstalledDevices[$poseidenInstalledDevicesNames[$deviceDriverId]];
+		return $poseidenInstalledDevices[$deviceDriverId];
 	}
 
 	public function createDevice($class, $data, $id)

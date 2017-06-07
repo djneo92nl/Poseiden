@@ -84,7 +84,8 @@ return [
      */
     'Cache' => [
         'default' => [
-            'className' => 'Redis'
+            'className' => 'Redis',
+            'duration' => '+1 week'
         ],
 
         /**

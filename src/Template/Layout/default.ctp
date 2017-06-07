@@ -31,7 +31,7 @@
 		<?= $this->Html->css('Utils/switchery/switchery.css') ?>
 		<?= $this->Html->css('Utils/noUiSlider/nouislider.min.css') ?>
 		<?= $this->Html->script("jquery-2.1.1.min.js"); ?>
-		<?= $this->Html->script("Utils/iro/iro.min.js");?>
+		<?= $this->Html->css("Utils/WheelColorPicker/wheelcolorpicker.dark.css");?>
 
 
         <?= $this->fetch('meta') ?>
@@ -96,6 +96,7 @@ elems.forEach(function(html) {
 });
         " , ['block' => 'scriptBottom']);?>
         <?= $this->fetch('scriptBottom');?>
+		<?= $this->Html->script("Utils/WheelColorPicker/jquery.wheelcolorpicker-3.0.2.min.js");?>
         <?= $this->Html->script("jquery-2.1.1.min.js"); ?>
 		<?= $this->Html->script("bootstrap.min.js"); ?>
 		<?= $this->Html->script("fastclick.min.js"); ?>

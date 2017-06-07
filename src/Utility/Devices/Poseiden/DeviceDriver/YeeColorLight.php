@@ -8,7 +8,7 @@ use Yeelight\Bulb\Bulb;
 use Yeelight\YeelightClient;
 
 
-class YeeColorLight implements Api\DimmableDevice
+class YeeColorLight implements Api\ColorLight
 {
 	/**
 	 * @var Bulb
@@ -22,14 +22,14 @@ class YeeColorLight implements Api\DimmableDevice
 
 
 	/**
-	 * @var State\DimmableState
+	 * @var State\ColorState
 	 */
 	protected $state;
 
 	public function __construct($deviceControllerManager, $data)
 	{
 		$this->client = new YeelightClient();
-		$this->state = new State\DimmableState();
+		$this->state = new State\ColorState();
 
 		$this->device = $this->client->search()[ $data->yeeLightid];
 
@@ -42,7 +42,7 @@ class YeeColorLight implements Api\DimmableDevice
 
 	}
 
-	public function setState(State\DimmableState $state)
+	public function setState(State\ColorState $state)
 	{
 		// TODO: Implement setState() method.
 	}
@@ -52,6 +52,7 @@ class YeeColorLight implements Api\DimmableDevice
 		$this->device->getProp([
 			\Yeelight\Bulb\BulbProperties::POWER,
 			\Yeelight\Bulb\BulbProperties::BRIGHT,
+			\Yeelight\Bulb\BulbProperties::RGB,
 		])->done(function(\Yeelight\Bulb\Response $response){
 			if ($response->getResult()[0] === 'on') {
 				$this->state->setState(true);
@@ -59,6 +60,7 @@ class YeeColorLight implements Api\DimmableDevice
 				$this->state->setState(false);
 			}
 			$this->state->setValue($this->map($response->getResult()[1], 0, 100, 0, 255));
+			$this->state->setColor('#'. dechex($response->getResult()[2]));
 		});
 	}
 
@@ -97,6 +99,17 @@ class YeeColorLight implements Api\DimmableDevice
 	{
 		$this->createState();
 		return $this->state->getValue();
+	}
+
+	public function getColor()
+	{
+		$this->createState();
+		return $this->state->getColor();
+	}
+
+	public function setColor($color)
+	{
+		$this->device->setRgb(hexdec($color), Bulb::EFFECT_SMOOTH, 500 );
 	}
 
 }
