@@ -46,7 +46,7 @@ class mqttShell extends Shell
 		}
 
 
-		$topics['m_bed/#'] = array("qos"=>0, "function"=>__CLASS__ . "::decodeMQTTMessage");
+		$topics['sensor/#'] = array("qos"=>0, "function"=>__CLASS__ . "::decodeMQTTMessage");
 		$this->getMqttClass()->subscribe($topics, 0);
 		while ($this->getMqttClass()->proc()) {
 
@@ -59,7 +59,8 @@ class mqttShell extends Shell
 	{
 		$topicExploded = explode('/', $topic);
 
-		\Cake\Cache\Cache::write('mqttSensor' . $topicExploded[1], $msg);
+		echo ($topicExploded[2] . ' : ' . $msg . PHP_EOL );
+		\Cake\Cache\Cache::write('mqttSensor' . $topicExploded[1] . $topicExploded[2], $msg);
 	}
 
 }

@@ -12,8 +12,13 @@
         <div class="panel-body">
             <li class="list-group-item">
                 <div class="pull-right">
-                    <input id="Power<?=$device->id; ?>" class="js-switch" type="checkbox" >
-                    <label for="Power<?=$device->id; ?>"></label>
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Power<?=$device->id; ?>">
+                        <label class="onoffswitch-label" for="Power<?=$device->id; ?>">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
                 </div>
                 Power
             </li>

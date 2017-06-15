@@ -7887,3 +7887,91 @@ a.list-group-item-dark:hover, a.list-group-item-dark:focus {
   margin-top: 0px;
   padding-top: 0px;
 }
+
+/* line 21, ../../src/Style/main.scss */
+.onoffswitch {
+  position: relative;
+  width: 55px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* line 25, ../../src/Style/main.scss */
+.onoffswitch-checkbox {
+  display: none;
+}
+
+/* line 28, ../../src/Style/main.scss */
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #E3E3E3;
+  border-radius: 50px;
+}
+
+/* line 32, ../../src/Style/main.scss */
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+/* line 36, ../../src/Style/main.scss */
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 13px;
+  padding: 0;
+  line-height: 13px;
+  font-size: 16px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+/* line 41, ../../src/Style/main.scss */
+.onoffswitch-inner:before {
+  content: "";
+  padding-left: 10px;
+  background-color: #49E845;
+  color: #FFFFFF;
+}
+
+/* line 46, ../../src/Style/main.scss */
+.onoffswitch-inner:after {
+  content: "";
+  padding-right: 10px;
+  background-color: #FFFFFF;
+  color: #666666;
+  text-align: right;
+}
+
+/* line 52, ../../src/Style/main.scss */
+.onoffswitch-switch {
+  display: block;
+  width: 22px;
+  margin: -2.5px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 38px;
+  border: 2px solid #E3E3E3;
+  border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+
+/* line 60, ../../src/Style/main.scss */
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+
+/* line 63, ../../src/Style/main.scss */
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
