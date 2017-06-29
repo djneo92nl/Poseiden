@@ -56,7 +56,9 @@ $cakeDescription = 'Poseiden: Please login';
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
 					<p class="pad-btm">Sign In to your account</p>
-					<?= $this->Form->create() ?>
+					<?= $this->Flash->render() ?>
+
+                    <?= $this->Form->create() ?>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -69,6 +71,15 @@ $cakeDescription = 'Poseiden: Please login';
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
 								<?= $this->Form->input('password', array('class' => 'form-control', 'label'=> false,
 									'placeholder' => 'password','div'=> false )) ?>
+							</div>
+						</div>
+                        <div class="form-group">
+							<div class="input-group">
+                                <div class="checkbox">
+                                    <label>
+										<?php echo $this->Form->checkbox('remember_me', array('hiddenField' => false, 'value' => '1')); ?> Remember me
+                                    </label>
+                                </div>
 							</div>
 						</div>
 						<div class="row">

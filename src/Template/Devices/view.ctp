@@ -44,6 +44,10 @@
                         <pre><?= $this->Text->autoParagraph(h($device->device_template)); ?></pre>
                     </div>
 
+                    <div class="row">
+                        <h4><?= __('Device Template') ?></h4>
+                        <pre><?= $this->Text->autoParagraph(h(implode(' , ',$allowedDeviceActions))); ?></pre>
+                    </div>
                     <li class="list-group-item">
                         <div class="pull-right">
                             <input id="Power" class="js-switch" type="checkbox">

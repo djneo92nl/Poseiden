@@ -52,13 +52,19 @@ class DevicesController extends AppController
 			'contain' => ['DeviceControllers']
 		]);
 
+		$data = json_decode($device->device_template);
+
 		$deviceManager = new Devices\DeviceManager(
-			$device->id ,json_decode($device->device_template),
+			$device->id ,
+			$data,
 			$device['device_controller']
 		);
 
+		$allowedDeviceActions = $deviceManager->getDeviceActions($data->DeviceConfig->type);
+
 
 		$this->set('device', $device);
+		$this->set('allowedDeviceActions', $allowedDeviceActions);
 		$this->set('_serialize', ['device']);
 	}
 
@@ -185,15 +191,26 @@ class DevicesController extends AppController
 			'contain' => ['DeviceControllers']
 		]);
 
+		$deviceData = json_decode($device->device_template);
+
 		$deviceManager = new Devices\DeviceManager(
-			$device->id ,json_decode($device->device_template),
+			$device->id ,
+			$deviceData,
 			$device['device_controller']
 		);
 
-		$data = $deviceManager->runDeviceCommand($command, $data);
+		$allowedDeviceActions = $deviceManager->getDeviceActions($deviceData->DeviceConfig->type);
+
+		if (in_array($command, $allowedDeviceActions)){
+			$commandReturn = $deviceManager->runDeviceCommand($command, $data);
+			$this->set('data', $commandReturn);
+		} else {
+			throw new \Cake\Network\Exception\ForbiddenException(__('Command not allowed'));
+
+		}
+
 
 		$this->RequestHandler->renderAs($this, 'json');
-		$this->set('data', $data);
 		$this->set('_jsonOptions', JSON_FORCE_OBJECT);
 		$this->set('_serialize', ['data']);
 	}

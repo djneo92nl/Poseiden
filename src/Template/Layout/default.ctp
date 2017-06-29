@@ -25,6 +25,8 @@
 		</title>
 		<?= $this->Html->meta('icon') ?>
 
+        <!--STYLESHEET-->
+        <!--=================================================-->
 		<?= $this->Html->css('bootstrap.css') ?>
 		<?= $this->Html->css('main.css') ?>
 		<?= $this->Html->css('font-awesome.min.css') ?>
@@ -72,29 +74,7 @@
 
         <?= $this->Html->script("Utils/switchery/switchery.js" , ['block' => 'scriptBottom']);?>
         <?= $this->Html->script("Utils/noUiSlider/nouislider.js" , ['block' => 'scriptBottom']);?>
-        <?= $this->Html->scriptBlock("
-        
-         function toggleSwitch(switch_elem, on) {
-        if (on){ // turn it on
-            if ($(switch_elem)[0].checked){ // it already is so do
-                // nothing
-            }else{
-                $(switch_elem).trigger('click').attr(\"checked\", \"checked\"); // it was off, turn it on
-            }
-        }else{ // turn it off
-            if ($(switch_elem)[0].checked){ // it's already on so
-                $(switch_elem).trigger('click').removeAttr(\"checked\"); // turn it off
-            }else{ // otherwise
-                // nothing, already off
-            }
-        }
-    }
-            var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
-elems.forEach(function(html) {
-  var switchery = new Switchery(html);
-});
-        " , ['block' => 'scriptBottom']);?>
         <?= $this->fetch('scriptBottom');?>
 		<?= $this->Html->script("Utils/WheelColorPicker/jquery.wheelcolorpicker-3.0.2.min.js");?>
         <?= $this->Html->script("jquery-2.1.1.min.js"); ?>

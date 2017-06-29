@@ -10,13 +10,18 @@
 			</a>
 		</div>
 		<div class="panel-body">
-			<li class="list-group-item">
-				<div class="pull-right">
-					<input id="Power<?=$device->id; ?>" class="js-switch" type="checkbox" >
-					<label for="Power<?=$device->id; ?>"></label>
-				</div>
-				Power
-			</li>
+            <li class="list-group-item">
+                <div class="pull-right">
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="Power<?=$device->id; ?>">
+                        <label class="onoffswitch-label" for="Power<?=$device->id; ?>">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
+                </div>
+                Power
+            </li>
 
 
             <div class="mar-top" id="sliderBrightness<?=$device->id; ?>">
@@ -49,16 +54,28 @@
 
                 });
 
+                var gettingDataForDevice<?=$device->id; ?> = false;
+
                 window.setInterval(function(){
                     if (deviceIntervall<?=$device->id; ?>allowed) {
-                        $.ajax('<?= $this->Url->Build(['controller' => 'Devices', 'action' => 'runDeviceCommand', $device->id, 'getState' ] )?>').done(function (data) {
-                            toggleSwitch($('#Power<?=$device->id; ?>'),  data.data.state);
-                            $("input#sliderBrightness<?=$device->id; ?>").val(data.data.brightness);
+                        if (!gettingDataForDevice<?=$device->id; ?>){
+                            gettingDataForDevice<?=$device->id; ?> = true;
+                            $.ajax({
+                                url: '<?= $this->Url->Build(['controller' => 'Devices', 'action' => 'runDeviceCommand', $device->id, 'getState' ] )?>'
 
-                            //$('#Power<?=$device->id; ?>').prop("checked", data.data.state)
-                        })
+                            }).done(function(data){
+                                if (deviceIntervall<?=$device->id; ?>allowed) {
+                                    gettingDataForDevice<?=$device->id; ?> = false;
+                                    $('#Power<?=$device->id; ?>').prop('checked', data.data.state);
+                                    $("input#sliderBrightness<?=$device->id; ?>").val(data.data.brightness);
+                                }
+                            }).fail(function() {
+                                gettingDataForDevice<?=$device->id; ?> = false;
+                            })
+                        }
                     }
-                }, 4000);
+                }, 5000);
+
 			</script>
 
 		</div>

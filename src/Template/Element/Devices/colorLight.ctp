@@ -92,17 +92,28 @@
 
                 });
 
+                var gettingDataForDevice<?=$device->id; ?> = false;
+
                 window.setInterval(function(){
                     if (deviceIntervall<?=$device->id; ?>allowed) {
-                        $.ajax('<?= $this->Url->Build(['controller' => 'Devices', 'action' => 'runDeviceCommand', $device->id, 'getState' ] )?>').done(function (data) {
-                            if (deviceIntervall<?=$device->id; ?>allowed) {
-                                toggleSwitch($('#Power<?=$device->id; ?>'), data.data.state);
-                                $("input#sliderBrightness<?=$device->id; ?>").val(data.data.brightness);
-                                $("#colorPicker<?=$device->id; ?>").wheelColorPicker('setValue', data.data.color.slice(1));
-                            }
-                        })
+                        if (!gettingDataForDevice<?=$device->id; ?>){
+                            gettingDataForDevice<?=$device->id; ?> = true;
+                            $.ajax({
+                                url: '<?= $this->Url->Build(['controller' => 'Devices', 'action' => 'runDeviceCommand', $device->id, 'getState' ] )?>'
+
+                            }).done(function(data){
+                                if (deviceIntervall<?=$device->id; ?>allowed) {
+                                    gettingDataForDevice<?=$device->id; ?> = false;
+                                    $('#Power<?=$device->id; ?>').prop('checked', data.data.state);
+                                    $("input#sliderBrightness<?=$device->id; ?>").val(data.data.brightness);
+                                    $("#colorPicker<?=$device->id; ?>").wheelColorPicker('setValue', data.data.color.slice(1));
+                                }
+                            }).fail(function() {
+                                gettingDataForDevice<?=$device->id; ?> = false;
+                            })
+                        }
                     }
-                }, 4000);
+                }, 5000);
             </script>
         </div>
         <div class="panel-footer text-lg-right">

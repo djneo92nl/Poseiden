@@ -34,6 +34,17 @@ class DeviceManager
 
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
+	public function getDeviceActions($deviceType)
+	{
+		$poseidenInstalledDevicesTypes = Configure::read("Poseiden.deviceTypes");
+
+		return $poseidenInstalledDevicesTypes[$deviceType]['actions'];
+	}
+
 	public function createDeviceControllerManager($devicesControllerTable)
 	{
 		if (empty($devicesControllerTable)) {

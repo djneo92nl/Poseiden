@@ -129,6 +129,16 @@ class UsersController extends AppController
 	public function login ()
 	{
 		if ($this->request->is('post')) {
+
+			if ($this->request->data['rememberMe'] == "on") {
+
+				$cookie = array();
+				$cookie['username'] = $this->request->data['email'];
+				$cookie['password'] = $this->request->data['password'];
+				$this->Cookie->write('rememberMe', $cookie, true, "1 week");
+				unset($this->request->data['rememberMe']);
+			}
+
 			$user = $this->Auth->identify();
 			if ($user) {
 				$this->Auth->setUser($user);

@@ -33,6 +33,7 @@ class YeeColorLight implements Api\ColorLight
 
 		$this->device = $this->client->search()[ $data->yeeLightid];
 
+
 		while (empty($this->device)) {
 			usleep(10);
 			$this->device = $this->client->search()[ $data->yeeLightid];
