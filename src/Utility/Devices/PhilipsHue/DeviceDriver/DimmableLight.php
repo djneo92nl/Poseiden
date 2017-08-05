@@ -35,7 +35,6 @@ class DimmableLight extends Common implements Api\DimmableDevice
 	 */
 	public function createState ()
 	{
-
 		$this->state->setState(($this->device->isOn() ? 1 : 0));
 		$this->state->setValue($this->device->getBrightness());
 	}

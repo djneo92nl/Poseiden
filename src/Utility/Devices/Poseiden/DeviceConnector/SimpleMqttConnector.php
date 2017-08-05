@@ -39,7 +39,7 @@ class simpleMqttConnector
 		$this->mqttClass = new phpMQTT($this->savedData->host, $this->savedData->port, $this->savedData->clientName);
 
 		if ($this->mqttClass->connect()) {
-			$this->mqttClass->publish($data['topic'], $data['message'], $data['qos']);
+			$this->mqttClass->publish($data['topic'], $data['message'], $data['qos'], 1);
 
 		}
 		unset($this->mqttClass);

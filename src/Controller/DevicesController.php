@@ -35,8 +35,19 @@ class DevicesController extends AppController
 		];
 		$devices = $this->paginate($this->Devices);
 
-		$this->set(compact('devices'));
-		$this->set('_serialize', ['devices']);
+		$devices =$devices->sortBy('device_controller_id', SORT_ASC)->toArray();
+
+		$controllers = [];
+
+		foreach ($devices as $device) {
+
+			$controllers[$device->device_controller_id]['driver'] = $device->device_controller;
+			$controllers[$device->device_controller_id]['devices'][] = $device;
+		}
+
+
+		$this->set(compact('controllers'));
+		$this->set('_serialize', ['controllers']);
 	}
 
 	/**

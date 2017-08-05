@@ -6,13 +6,18 @@
     </div>
 </div>
 <div id="page-content">
-    <div class="row">
-        <div >
-			<?php foreach ($devices as $device): ?>
-				<?= $this->element('Devices/' . (str_replace(' ', '', $device->device_type)),['device' => $device,'cache' => true]) ?>
-			<?php endforeach; ?>
+    <?php foreach ($controllers as $controller): ?>
+        <h4 class="text-thin"><?= $controller['driver']->name ?></h4>
+        <hr class="mar-no">
+        <br>
+        <div class="row">
+
+                <?php foreach ($controller['devices'] as $device): ?>
+                    <?= $this->element('Devices/' . (str_replace(' ', '', $device->device_type)),['device' => $device,'cache' => true]) ?>
+                <?php endforeach; ?>
         </div>
-    </div>
+    <?php endforeach; ?>
+
     <div class="paginator">
         <ul class="pagination">
 			<?= $this->Paginator->prev('< ' . __('previous')) ?>

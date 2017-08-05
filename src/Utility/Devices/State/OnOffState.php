@@ -13,6 +13,10 @@ class OnOffState
 	 */
 	const OFF = false;
 
+	/**
+	 * Device Unavailable
+	 */
+	const UNAVAILABLE =  'UNAVAILABLE';
 
 	/**
 	 * @var int
@@ -58,7 +62,7 @@ class OnOffState
 	 * @param $state
 	 * @return bool
 	 */
-	public function setState(bool $state)
+	public function setState($state)
 	{
 		$this->state = $state;
 	}
