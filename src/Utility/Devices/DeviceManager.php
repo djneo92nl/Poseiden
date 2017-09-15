@@ -42,7 +42,7 @@ class DeviceManager
 	{
 		$poseidenInstalledDevicesTypes = Configure::read("Poseiden.deviceTypes");
 
-		return $poseidenInstalledDevicesTypes[$deviceType]['actions'];
+		return $poseidenInstalledDevicesTypes[$deviceType]['functions'];
 	}
 
 	public function createDeviceControllerManager($devicesControllerTable)
