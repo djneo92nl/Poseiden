@@ -36,7 +36,13 @@ class ColorLight extends Common implements Api\ColorLight
 	 */
 	public function createState ()
 	{
-		$this->state->setState(($this->device->isOn() ? 1 : 0));
+        if (!$this->device->isReachable()) {
+            $this->state->setUnavailable();
+        } else {
+            $this->state->setState(($this->device->isOn() ? 1 : 0));
+
+        }
+
 		$this->state->setValue($this->device->getBrightness());
 		substr($color = $this->getColor(),1);
 		$this->state->setColor($color);

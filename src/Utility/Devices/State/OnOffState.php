@@ -75,4 +75,9 @@ class OnOffState
 		$this->state  = !$this->state;
 	}
 
+    public function setUnavailable()
+    {
+        $this->state = self::UNAVAILABLE;
+	}
+
 }
