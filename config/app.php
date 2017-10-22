@@ -83,40 +83,43 @@ return [
      * Configure the cache adapters.
      */
     'Cache' => [
-        'default' => [
-            'className' => 'Redis',
-            'duration' => '+1 week'
-        ],
+	    'default' => [
+		    'className' => 'File',
+		    'path' => CACHE,
+		    'url' => env('CACHE_DEFAULT_URL', null),
+	    ],
 
-        /**
-         * Configure the cache used for general framework caching.
-         * Translation cache files are stored with this configuration.
-         * Duration will be set to '+1 year' in bootstrap.php when debug = false
-         */
-        '_cake_core_' => [
-            'className' => 'File',
-            'prefix' => 'myapp_cake_core_',
-            'path' => CACHE . 'persistent/',
-            'serialize' => true,
-            'duration' => '+2 minutes',
-            'url' => env('CACHE_CAKECORE_URL', null),
-        ],
+	    /**
+	     * Configure the cache used for general framework caching.
+	     * Translation cache files are stored with this configuration.
+	     * Duration will be set to '+2 minutes' in bootstrap.php when debug = true
+	     * If you set 'className' => 'Null' core cache will be disabled.
+	     */
+	    '_cake_core_' => [
+		    'className' => 'File',
+		    'prefix' => 'myapp_cake_core_',
+		    'path' => CACHE . 'persistent/',
+		    'serialize' => true,
+		    'duration' => '+1 years',
+		    'url' => env('CACHE_CAKECORE_URL', null),
+	    ],
 
-        /**
-         * Configure the cache for model and datasource caches. This cache
-         * configuration is used to store schema descriptions, and table listings
-         * in connections.
-         * Duration will be set to '+1 year' in bootstrap.php when debug = false
-         */
-        '_cake_model_' => [
-            'className' => 'File',
-            'prefix' => 'myapp_cake_model_',
-            'path' => CACHE . 'models/',
-            'serialize' => true,
-            'duration' => '+2 minutes',
-            'url' => env('CACHE_CAKEMODEL_URL', null),
-        ],
+	    /**
+	     * Configure the cache for model and datasource caches. This cache
+	     * configuration is used to store schema descriptions, and table listings
+	     * in connections.
+	     * Duration will be set to '+2 minutes' in bootstrap.php when debug = true
+	     */
+	    '_cake_model_' => [
+		    'className' => 'File',
+		    'prefix' => 'myapp_cake_model_',
+		    'path' => CACHE . 'models/',
+		    'serialize' => true,
+		    'duration' => '+1 years',
+		    'url' => env('CACHE_CAKEMODEL_URL', null),
+	    ],
     ],
+
 
     /**
      * Configure the Error and Exception handlers used by your application.
@@ -225,9 +228,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'root',
-            'password' => 'root',
-            'database' => 'poseiden',
+            'username' => env('MYSQL_USERNAME'),
+            'password' => env('MYSQL_PASSWORD'),
+            'database' => env('MYSQL_DATABASE'),
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],

@@ -12,7 +12,7 @@
     ],
     "require": {
         "php": ">=5.6.9",
-        "cakephp/cakephp": "~3.2",
+        "cakephp/cakephp": "3.5.*",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "@stable",
         "cakephp/plugin-installer": "*",
@@ -21,8 +21,8 @@
         "friendsofcake/bootstrap-ui": "^0.6.0",
         "sqmk/phue": "^1.6",
         "trntv/probe": "^1.0",
-        "andrej-griniuk/cakephp-two-factor-auth": "^1.2",
-        "elberth90/yeelight-api-client": "^0.5.0"
+        "elberth90/yeelight-api-client": "^0.5.0",
+        "josegonzalez/dotenv": "2.*"
     },
     "require-dev": {
         "psy/psysh": "@stable",
